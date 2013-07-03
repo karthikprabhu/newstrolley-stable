@@ -1,0 +1,21 @@
+/* -- Main container -- */
+@media (min-width: 979px) {
+	body {
+		padding-top: 50px;
+	}
+}
+
+/* -- Footer -- */
+footer.footer {
+	margin-bottom: 30px;
+}
+
+footer.footer p.pull-left {
+	padding-top: 4px;
+}
+
+@media (max-width: 480px) {
+	footer.footer .pull-right {
+		float: left;
+	}
+}

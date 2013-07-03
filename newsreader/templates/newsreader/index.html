@@ -1,0 +1,114 @@
+{% extends "newsreader/base.html" %}
+{% load staticfiles %}
+
+{% block page-specific-css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/landing.css' %}">
+{% endblock %}
+
+{% block page-specific-js %}
+	<script type="text/javascript" src="{% static 'newsreader/js/landing.js' %}"></script>
+{% endblock %}
+
+{% block navbar-right-content %}
+	<a id="login-btn" role="button" class="btn btn-info pull-right" href="#login-modal" data-toggle="modal">Login</a>
+{% endblock %}
+
+{% block main-container %}
+	{% if user_exists %}
+		<div id="signup-error" class="alert alert-error">
+			{{ email }} is already registered with NewsTrolley. If you have forgotten your password, you can recover your account here.
+		</div>
+	{% endif %}
+	<!-- Landing image and content -->
+	<div id="landing-hero" class="row hero-unit">
+		<div class="span7">
+			<img class="img-polaroid" src="{% static 'newsreader/media/newspapers2.jpg' %}">
+		</div>
+		<div class="span4 pull-left">
+			<h1>News Trolley</h1>
+			<p class="lead text-info">
+				<em>Build your personalized newspaper!</em>
+			</p>
+			<p>
+				News Trolley enables you to build a customizable newspaper that aggregates news from different sources, and lets you follow your favorite topics with ease. 
+			</p>
+			<a id="login-btn" role="button" class="btn btn-success" href="#signup-form-modal" data-toggle="modal">SignUp for Free</a>
+		</div>
+	</div>
+
+	<hr>
+	<!-- Basic Tour -->
+	<div class="row">
+		<div class="span4 text-center">
+			<i class="icon-news"></i>
+			<h3>Multiple News Sources</h3>
+			<p>We've partnered with a multitude of newspapers and online news sources to provide you with the best of news. Our partners include The Hindu, Times of India, CNN, Deccan Herald, Economic Times and more.</p>
+		</div>
+		<div class="span4 text-center">
+			<i class="icon-customize"></i>
+			<h3>Highly Customizable</h3>
+			<p>Our newspaper is totally customizable which means you can follow only the news you love and remove the ones you don't. You can also choose to aggregate different news topics from different news sources.</p>
+		</div>
+		<div class="span4 text-center">
+			<i class="icon-newspaper"></i>
+			<h3>Newspaper Style Feel</h3>
+			<p>The best feature of The High Times is its newspaper style feel. Whether you are reading on a desktop or on your tablet, you are guaranteed to get an authentic newspaper style feel</p>
+		</div>
+	</div>
+{% endblock %}
+
+{% block other-body-content %}
+	<!-- Popup login box -->
+	<div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3 id="login-label" class="text-center">Sign In</h3>
+		</div>
+		<div class="modal-body text-center">
+			<form id="email-login" method="post" action="{% url 'newsreader:login' %}">
+				{% csrf_token %}
+				{% if login_error %}
+					<div class="alert alert-error">Incorrect e-mail/password</div>
+				{% endif %}
+				<input type="text" name="email" placeholder="Email ID" /><br />
+				<input type="password" name="password" placeholder="Password" /><br /> 
+				<input type="submit" class="btn btn-inverse" value="Login" /><br />
+			</form>
+		</div>
+	</div>
+	
+	<!-- Sign up form -->
+	<div id="signup-form-modal" class="modal hide fade text-center" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Sign Up</h3>
+		</div>
+		<form id="signup-form" method="post" action="{% url 'newsreader:signup' %}">
+			{% csrf_token %}
+			<div class="modal-body">
+				<div class="control-group input-append">
+					<input id="name" type="text" name="name" placeholder="Name" />
+					<span class="add-on"></span>
+				</div>
+				<div class="control-group input-append">
+					<input id="email" type="text" name="email" placeholder="Email Id" />
+					<span class="add-on"></span>
+				</div>
+				<div class="control-group input-append">
+					<input id="password" type="password" name="password" placeholder="Password" />
+					<span class="add-on"></span>
+				</div>
+				<input id="create-account" type="submit" class="btn btn-success" value="Create an Account" /><br />
+			</div>
+		</form>
+	  	<div class="modal-footer">
+			<p>Already have an account? <button class="btn btn-info" id="signup-login">Log In</button></p>
+		</div>
+	</div>
+
+	{% if login_error %}
+		<script type="text/javascript">
+			$('#login-modal').modal('show');
+		</script>
+	{% endif %}
+{% endblock %}

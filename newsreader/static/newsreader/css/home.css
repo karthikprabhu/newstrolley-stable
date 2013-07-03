@@ -1,0 +1,203 @@
+body {
+	background: url("../media/paper_bg_4.jpg");
+}
+/* -- Nav bar -- */
+.form-search {
+	display: inline-block;
+	margin: 0;
+	padding: 7px 0 0;
+}
+
+#user-info {
+	margin-top: 0;
+}
+
+@media (min-width: 980px) {
+	.nav-collapse {
+		display: inline-block;
+		float: right;
+		padding: 7px 0 0;
+	}
+}
+
+/* -- Tab Sidebar -- */
+#sidebar-tabs {
+	padding-top: 20px;
+}
+
+#sidebar-tabs .nav-tabs .active {
+	font-weight: bold;
+}
+
+#sidebar-tabs .nav-tabs .active a {
+	background-color: rgb(0, 136, 204);
+	box-shadow: 3px 2px 2px #999;
+	color: white;
+}
+
+#add-tab {
+	margin: 10px 0;
+}
+
+#sidebar-tabs > ul, #tab-content {
+	margin-left: 0;
+}
+
+
+/* -- Tab Content -- */
+#tab-content {
+	padding: 10px;
+}
+
+#tab-content .row {
+	margin-bottom: 20px;
+	margin-left: 0;
+}
+
+.newspaper-title, .title {
+	font-family: Georgia, serif;
+}
+
+.newspaper-title > h1 {
+	font-size: 3.5em;
+	margin-bottom: 0;
+}
+
+.newspaper-content {
+	padding-top: 20px;
+}
+
+.newspaper-content .row {
+	border-bottom: 1px solid #abc;
+}
+
+.headlines {
+	float: left;
+	margin-left: 0;
+	border-top: 3px solid #005fa2;
+	padding-top: 0;
+	padding-bottom: 10px;
+}
+
+.headlines .row {
+	border-bottom: 3px solid #005fa2;
+}
+
+.headlines .title {
+	font-size: 2.1em;
+}
+
+.title a {
+	color: rgb(51,51,51);
+}
+
+.nt-right {
+	float: right;
+}
+
+.nt-left {
+	float: left;
+}
+
+.nt-left, .nt-right {
+	margin-left: 0;
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+
+.byline {
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
+.article-content > img {
+	border: 1px solid #ccc;
+	background: white;
+	display: inline-block;
+	float: left;
+	margin: 0 10px 10px 0;
+	max-width: 300px;
+	padding: 6px;
+	width: auto;
+}
+
+#scroll-detect {
+	color: rgb(134, 134, 134);
+}
+
+#scroll-detect > div.loading {
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 7px 7px 0;
+	width: 50px;
+}
+
+#scroll-detect > span {
+	display: none;
+}
+
+/* -- Add Source Modal -- */
+#add-source-modal {
+	left: 50%;
+	margin-left: -135px;
+	top: 20%;
+	width: 270px;
+}
+
+#add-source-modal .modal-body {
+	height: 200px;
+}
+
+#add-source-modal .modal-body table{
+	margin-top: 20px;
+}
+
+.not-selected td, .selected td {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+.not-selected i, #js-content {
+	display: none;
+}
+
+/* -- Tab Settings -- */
+#tags span, .tag {
+	padding-right: 16px;
+}
+
+#tags span.label+a, .tag+a {
+	margin-left: -12px;
+	margin-right: 5px;
+	text-decoration: none;
+	color: gray;
+}
+
+#tags span.label+a:hover, .tag+a:hover {
+	color: rgb(218, 79, 73);
+	cursor: pointer;
+}
+
+#tags > a:hover, .tag > a:hover {
+	cursor: pointer;
+}
+
+a > span.label-info:hover {
+	cursor: pointer;
+}
+
+/* -- Add Tab Popover -- */
+#add-tab+div.popover form {
+	margin-bottom: 10px;
+}
+
+#add-tab+div.popover form .btn {
+	margin-top: 10px;
+}

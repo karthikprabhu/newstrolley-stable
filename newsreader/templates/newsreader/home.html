@@ -1,0 +1,179 @@
+{% extends "newsreader/base.html" %}
+{% load staticfiles %}
+{% load dajaxice_templatetags %}
+
+{% block title %}NewsTrolley - {{ user.name }}{% endblock %}
+
+{% block page-specific-css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/home.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/jquery-ui.css' %}">
+{% endblock %}
+
+{% block page-specific-js %}
+	<script type="text/javascript" src="{%static 'newsreader/js/layoutmanager.js' %}"></script>
+	<script type="text/javascript" src="{% static 'newsreader/js/nthtmlgenerator.js' %}"></script>
+	<script type="text/javascript" src="{% static 'newsreader/js/home.js' %}"></script>
+	{% dajaxice_js_import %}
+{% endblock %}
+
+{% block navbar-main-content %}
+	<!-- <form class="form-search">
+		<div class="input-prepend">
+  			<span class="add-on"><i class="icon-search"></i></span>
+  			<input class="input-xxlarge" type="text" placeholder="Search tags..">
+		</div>
+	</form> -->
+{% endblock %}
+
+{% block navbar-right-content %}
+	<div id="user-info" class="btn-group">
+		<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> {{ user.name }}</a>
+		<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+		 <ul class="dropdown-menu">
+		    <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
+		    <li><a href="{% url 'newsreader:logout' %}"><i class="icon-off"></i> Log out</a></li>
+  		</ul>
+	</div>
+{% endblock %}
+
+{% block main-container %}
+	{% if image_size_exceeded %}
+	<div class="alert alert-info">
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>Image Size Exceeded: </strong>The image you provided was ignored because it exceeded the 1MB limit!
+	</div>
+	{% endif%}
+
+	<!-- Tab sidebar -->
+	<div class="row">
+		<div id="sidebar-tabs" class="tabbable tabs-left span12">
+			<ul class="nav nav-tabs text-left span2">
+				<!-- Tabs -->
+				{% for tab in tabs %}
+					<li{% if tab.id == active_tab.id %} class="active" {% endif %}>
+						<a href="{{ tab.id }}">
+						{% if tab.image %}
+							<img src="{{ tab.image.url }}"></img>
+						{% else %}
+							<i class="icon-th-large"></i> 
+						{% endif %}
+						{{ tab.name }}
+						</a>
+					</li>
+				{% endfor %}
+
+				<!-- Add tab -->
+				<div class="pagination-centered">
+					<a id="add-tab" class="btn large btn-success" href="#">Add Tab</a>
+				</div>
+			</ul>
+
+			<!-- Tab contents -->
+			<div class="tab-content span9" id="tab-content">
+				<div class="tab-pane active">
+					<div class="tab-settings pull-right">
+						<button onclick="retrieve_tags()"><i class="icon-cog"></i></button>
+					</div>
+					<div class="newspaper-title text-center">
+						<h1>{{ user.newspaper_name }}</h1>
+						<small class="muted">{% now "l - N d, Y" %}</small>
+					</div>
+					<div class="newspaper-content row">
+					</div>
+					<div id="scroll-detect" class="pagination-centered">
+						<div class="loading">
+							<img src="{% static 'newsreader/media/loading.gif' %}" width="16" height="16"/>
+							<p>Loading</p>
+						</div>
+						<span class="alert alert-info">No more articles to display</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block other-body-content %}
+	<!-- Add source modal -->
+	<div id="add-source-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="add-source-modal-label" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3 id="add-source-modal-label">Add Source</h3>
+		</div>
+		<div class="modal-body">
+			<div class="form-search">
+				{% csrf_token %}
+				<div class="input-append">
+				    <input id="search-query" type="text" class="span2 search-query" onkeyup="search_sources()">
+				    <button type="submit" class="btn" onclick="search_sources()"><i class="icon-search"></i></button>
+				</div>
+			</div>
+			<div>
+				<table class="table table-condensed table-hover">
+					<thead>
+						<tr>
+							<th><i class="icon-ok"></i></th>
+							<th>Source</th>
+						</tr>
+					</thead>
+					<tbody id="sources-results">
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" onclick="add_sources()">Add Source</button>
+		</div>
+	</div>
+
+	<!-- Content used in Javascript -->
+	<div id="js-content">
+		<!-- Tab settings popover -->
+		<div class="dropdown">  
+			<div class="dropdown"> 
+				<button id="sources" class="dropdown-toggle btn" data-toggle="dropdown" href="#" role="button" onclick="retrieve_sources();">News Sources <b class="caret"></b></button>  
+				<ul id="sources-dropdown" class="dropdown-menu span2" role="menu" aria-labelledby="sources">
+					<div class="pagination-centered"><button class="btn primary" role="menuitem" href"#" onclick="$('#add-source-modal').modal('show')">Add Source</button></div> 
+				</ul> 
+			</div> 
+			<h5 class="muted" style="margin-top:10px;">Tags</h5> 
+			<div id="tags" class="well well-small"> 
+				<a onclick="create_popover(this)"><span class="label label-info">+ new tag</span></a>
+			</div> 
+			<button class="btn btn-danger" onclick="delete_tab()">Delete Tab</button>
+			<div class="clearfix"></div>
+		</div>
+
+		<!-- Add tab popover -->
+		<div class="pagination-centered">
+	        <form action="{% url 'newsreader:add_tab' %}" method="post" enctype="multipart/form-data" onsubmit="add_tab_validate(event, this)">
+                {% csrf_token %}
+				<input type="text" name="name" placeholder="Tab Name" /><br/>
+				<input type="file" name="image" placeholder="Tab picture URL (Optional)" /><br/>
+				<p style="color:blue">Image size must be &lt; 1MB.</p>
+				<input class="btn btn-primary" type="submit" value="Add Tab" />
+	   		</form>
+		</div>
+
+		<!-- Add tag popover -->
+		<div>
+			<input type="text" onkeyup="get_predictions(this)">
+		</div>
+
+		<!-- Delete tag popover -->
+		<div id="delete-tag-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-header">
+			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			    <h3>Delete tag</h3>
+			</div>
+			<div class="modal-body">
+				<p>Are you sure this tag is not relevant to the article?</p>
+				<small>Help us serve better content by making sure articles have relevant tags.</small>
+			</div>
+		  	<div class="modal-footer">
+		    	<a href="#" class="btn" data-dismiss="modal">Cancel</a>
+		    	<a href="#" class="btn btn-error">Delete</a>
+		  	</div>
+		</div>
+	</div>
+{% endblock %}

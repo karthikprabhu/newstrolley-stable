@@ -1,0 +1,61 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{% block title %}News Trolley{% endblock %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{% static 'newsreader/media/favicon.ico' %}">
+
+		<!-- CSS Files -->
+		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/bootstrap-responsive.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/zocial/zocial.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/base.css' %}">
+		{% block page-specific-css %}{% endblock %}
+
+		<!-- JS Files -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="{% static 'newsreader/js/bootstrap.min.js' %}"></script>
+		{% block page-specific-js %}{% endblock %}
+	</head>
+	<body>
+		<!-- Top navigation bar -->
+		<div class="navbar navbar-fixed-top navbar-inverse">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+				        <span class="icon-bar"></span>
+			      	</a>
+					<a class="brand" href="#"><img src="{% static 'newsreader/media/std-logo-32.png' %}"> NewsTrolley</a>
+					{% block navbar-main-content %}{% endblock %}
+					<div class="nav-collapse collapse">
+						{% block navbar-right-content %}{% endblock %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main container -->
+		<div class="container">
+			{% block main-container %}{% endblock %}
+			<hr>
+			<footer class="footer">
+				<p class="pull-left">&copy; 2013 The High Times Inc.</p>
+				<div class="pull-right">
+					<a class="btn btn-link" href="#">About</a>
+					<a class="btn btn-link" href="#">TOS</a>
+					<a class="btn btn-link" href="#">Legal</a>
+					<a class="btn btn-link" href="#">Contact</a>
+				</div>
+				<div class="clearfix"></div>
+			</footer>
+		</div>
+
+		<!-- Rest of the body -->
+		{% block other-body-content %}{% endblock %}
+	</body>
+</html>

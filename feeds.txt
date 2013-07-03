@@ -1,0 +1,522 @@
+﻿http://feeds.bbc.co.uk/hindi/regionalnews/index.xml,BBC-Hindi: India
+http://bangaloremirror.com/rssfeeds.aspx?feed=bmncity,Bangalore Mirror: City
+http://bangaloremirror.com/rssfeeds.aspx?feed=bmcover,Bangalore Mirror: Cover
+http://bangaloremirror.com/rssfeeds.aspx?feed=bmstate,Bangalore Mirror: State
+http://outlookindia.com/rss/section/books,Outlook India: Books
+http://outlookindia.com/rss/section/business,Outlook India: Business
+http://feeds.business-standard.com/rss/3_0.xml,Business Standard: Banking & Finance
+http://feeds.business-standard.com/rss/2_0.xml,Business Standard: Companies & Industry
+http://feeds.business-standard.com/rss/4_0.xml,Business Standard: Economy & Policy
+http://feeds.business-standard.com/rss/key.xml,Business Standard: Front Page Headlines
+http://feeds.business-standard.com/rss/6_0.xml,Business Standard: Life & Leisure
+http://feeds.business-standard.com/rss/7_0.xml,Business Standard: Management & Mktg
+http://feeds.business-standard.com/rss/1_0.xml,Business Standard: Markets & Investing
+http://feeds.business-standard.com/rss/online.xml,Business Standard: News Now
+http://feeds.business-standard.com/rss/5_0.xml,Business Standard: Opinion & Analysis
+http://feeds.business-standard.com/rss/8_0.xml,Business Standard: Tech World
+http://feeds.business-standard.com/rss/paper.xml,Business Standard: Today
+http://www.ibnlive.com/xml/top.xml,CNN-IBN Top Stories
+http://www.ibnlive.com/xml/rss/business.xml,CNN-IBN: Business
+http://www.ibnlive.com/xml/rss/health.xml,CNN-IBN: Health
+http://www.ibnlive.com/xml/rss/india.xml,CNN-IBN: India
+http://www.ibnlive.com/xml/rss/lifestyle.xml,CNN-IBN: Lifestyle
+http://www.ibnlive.com/xml/rss/politics.xml,CNN-IBN: Politics
+http://www.ibnlive.com/xml/rss/sci-tech.xml,CNN-IBN: Sci-Tech
+http://www.ibnlive.com/xml/rss/sports.xml,CNN-IBN: Sports
+http://www.ibnlive.com/xml/rss/world.xml,CNN-IBN: World
+http://cricket.indiatimes.com/rssfeeds/865590.cms,Indiatimes Cricket: Columnists
+http://cricket.indiatimes.com/rssfeeds/865566.cms,Indiatimes Cricket: Features
+http://cricket.indiatimes.com/rssfeeds/865073.cms,Indiatimes Cricket: Indian Cricket News
+http://cricket.indiatimes.com/rssfeeds/865209.cms,Indiatimes Cricket: International News
+http://cricket.indiatimes.com/rssfeeds/865632.cms,Indiatimes Cricket: Interviews
+http://cricket.indiatimes.com/rssfeeds/864838.cms,Indiatimes Cricket: News
+http://www.centralchronicle.com/feed,Central Chronicle
+http://www.centralchronicle.com/bhopal-news/feed,Central Chronicle: Bhopal
+http://www.centralchronicle.com/business-news/feed,Central Chronicle: Business
+http://www.centralchronicle.com/editorial/feed,Central Chronicle: Editorial
+http://www.centralchronicle.com/madhya-pradesh-news/feed,Central Chronicle: Madhya Pradesh
+http://www.centralchronicle.com/national-news/feed,Central Chronicle: Nation
+http://www.centralchronicle.com/photogallery/feed,Central Chronicle: Photo Gallery
+http://www.centralchronicle.com/technology-news/feed,Central Chronicle: Technology
+http://www.citizenmatters.in/feed/rss,Citizen Matters
+http://outlookindia.com/rss/features/cover,Outlook India: Cover Stories
+http://www.dnaindia.com/syndication/rss%2Ccatid-5.xml,DNA: Evolutions
+http://www.dnaindia.com/syndication/rss%2Ccatid-1058783.xml,DNA: Health
+http://www.dnaindia.com/syndication/rss%2CcatID-2.xml,DNA: India
+http://www.dnaindia.com/syndication/rss%2CcatID-4.xml,DNA: Money
+http://www.dnaindia.com/syndication/rss_popular.xml,DNA: Popular News
+http://www.dnaindia.com/syndication/rss_column.xml,DNA: Recent Columns
+http://www.dnaindia.com/syndication/rss_topnews.xml,DNA: Top News
+http://www.deccanherald.com/rss/analysis.rss,Deccan Herald: Analysis
+http://www.deccanherald.com/rss/business.rss,Deccan Herald: Business
+http://www.deccanherald.com/rss/columns.rss,Deccan Herald: Columns
+http://www.deccanherald.com/rss/entertainment.rss,Deccan Herald: Entertainment
+http://www.deccanherald.com/rss/delhi.rss,Deccan Herald: New Delhi
+http://www.deccanherald.com/rss/opinion.rss,Deccan Herald: Opinion
+http://www.deccanherald.com/rss/sports.rss,Deccan Herald: Sports
+http://www.deccanherald.com/rss/supplements.rss,Deccan Herald: Supplements
+http://www.ddinews.gov.in/rssCMS,Doordarshan
+http://www.downtoearth.org.in/rss.xml,Down to Earth
+http://economictimes.indiatimes.com/rssfeeds/13357077.cms,ET: Advertising
+http://economictimes.indiatimes.com/rssfeeds/1202099874.cms,ET: Agriculture
+http://economictimes.indiatimes.com/rssfeeds/13359675.cms,ET: Auto
+http://economictimes.indiatimes.com/rssfeeds/26865660.cms,ET: BPO
+http://economictimes.indiatimes.com/rssfeeds/13358319.cms,ET: Banking
+http://economictimes.indiatimes.com/rssfeeds/2026181286.cms,ET: Big Bucks: Investment
+http://economictimes.indiatimes.com/rssfeeds/13358090.cms,ET: Biotech
+http://economictimes.indiatimes.com/rssfeeds/287662.cms,ET: Brand Equity
+http://economictimes.indiatimes.com/rssfeeds/575221.cms,ET: Cars
+http://economictimes.indiatimes.com/rssfeeds/13357085.cms,ET: Consultancy / Audit
+http://economictimes.indiatimes.com/rssfeeds/13358859.cms,ET: Consumer Products
+http://economictimes.indiatimes.com/rssfeeds/121385957.cms,ET: Corporate Dossier
+http://economictimes.indiatimes.com/rssfeeds/1286551815.cms,ET: Economy/Finance
+http://economictimes.indiatimes.com/rssfeeds/25466841.cms,ET: Education
+http://economictimes.indiatimes.com/rssfeeds/13358854.cms,ET: Electronics
+http://economictimes.indiatimes.com/rssfeeds/13357919.cms,ET: Engineering
+http://economictimes.indiatimes.com/rssfeeds/13357410.cms,ET: Entertainment
+http://economictimes.indiatimes.com/rssfeeds/13358807.cms,ET: FMCG
+http://economictimes.indiatimes.com/rssfeeds/13358817.cms,ET: Fashion / Cosmetics
+http://economictimes.indiatimes.com/rssfeeds/13358311.cms,ET: Finance / Insurance
+http://economictimes.indiatimes.com/rssfeeds/13358793.cms,ET: Food
+http://economictimes.indiatimes.com/rssfeeds/1200949414.cms,ET: Foreign Trade
+http://economictimes.indiatimes.com/rssfeeds/129134.cms,ET: Gadgets
+http://economictimes.indiatimes.com/rssfeeds/12872390.cms,ET: Global Markets
+http://economictimes.indiatimes.com/rssfeeds/13358070.cms,ET: Healthcare
+http://economictimes.indiatimes.com/rssfeeds/40274504.cms,ET: IETS
+http://economictimes.indiatimes.com/rssfeeds/14655708.cms,ET: IPOs
+http://economictimes.indiatimes.com/rssfeeds/344531568.cms,ET: Indicators
+http://economictimes.indiatimes.com/rssfeeds/13357549.cms,ET: Infotech
+http://economictimes.indiatimes.com/rssfeeds/1135557951.cms,ET: Infrastructure
+http://economictimes.indiatimes.com/rssfeeds/13358304.cms,ET: Insurance
+http://economictimes.indiatimes.com/rssfeeds/107115.cms,ET: Jobs
+http://economictimes.indiatimes.com/rssfeeds/13357396.cms,ET: Media
+http://economictimes.indiatimes.com/rssfeeds/1107225967.cms,ET: Mutual Funds
+http://economictimes.indiatimes.com/rssfeeds/13358368.cms,ET: Oil & Gas
+http://economictimes.indiatimes.com/rssfeeds/897228639.cms,ET: Opinion
+http://economictimes.indiatimes.com/rssfeeds/13357719.cms,ET: Petrochem
+http://economictimes.indiatimes.com/rssfeeds/13358057.cms,ET: Pharma
+http://economictimes.indiatimes.com/rssfeeds/1106944246.cms,ET: Policy
+http://economictimes.indiatimes.com/rssfeeds/13358361.cms,ET: Power
+http://economictimes.indiatimes.com/rssfeeds/13356992.cms,ET: Retailing
+http://economictimes.indiatimes.com/rssfeeds/13357555.cms,ET: Software
+http://economictimes.indiatimes.com/rssfeeds/13357699.cms,ET: Steel
+http://economictimes.indiatimes.com/rssfeeds/14655678.cms,ET: Stocks News
+http://economictimes.indiatimes.com/rssfeeds/542990.cms,ET: Telecom
+http://economictimes.indiatimes.com/rssfeeds/13354027.cms,ET: Transportation
+http://economictimes.indiatimes.com/rssfeeds/13356984.cms,ET: Travel
+http://economictimes.indiatimes.com/rssfeeds/13359633.cms,ET: Two Wheelers
+http://outlookindia.com/rss/features/essays,Outlook India: Essays
+http://www.expressindia.com/syndications/ei.xml,Express India: Front Page
+http://www.mydigitalfc.com/rss.xml,Financial Chronicle
+http://www.expressindia.com/syndications/fe.xml,Financial Express: Front Page
+http://www.ft.com/rss/world/asiapacific/india,Financial Times India
+http://www.ft.com/rss/world/asiapacific/india/business,Financial Times India: Business
+http://www.ft.com/rss/world/asiapacific/india/economy,Financial Times India: Economy
+http://www.ft.com/rss/world/asiapacific/india/finance,Financial Times India: Finance
+http://www.ft.com/rss/world/asiapacific/india/politics,Financial Times India: Politics
+http://www.ft.com/rss/world/asiapacific/india/regulation,Financial Times India: Regulation
+http://www.ft.com/rss/world/asiapacific/india/society,Financial Times India: Society
+http://business.in.com/rssfeed/rss_all.xml,Forbes India
+http://goodnewsindia.com/index.php/Supplement/rss/,Good News India
+http://www.governancenow.com/views/back-story/rss.xml,GovernanceNow: Backstory
+http://www.governancenow.com/gov-now/bureaucracy/rss.xml,GovernanceNow: Bureaucracy
+http://www.governancenow.com/views/columns/rss.xml,GovernanceNow: Columns
+http://www.governancenow.com/views/days-debate/rss.xml,GovernanceNow: Day&#039;s Debate
+http://www.governancenow.com/views/gntalk/rss.xml,GovernanceNow: GNtalk
+http://www.governancenow.com/news/gntv/rss.xml,GovernanceNow: GNtv
+http://www.governancenow.com/gov-next/rss.xml,GovernanceNow: GovNext
+http://www.governancenow.com/gov-now/rss.xml,GovernanceNow: GovNow
+http://www.governancenow.com/views/interview/rss.xml,GovernanceNow: Interview
+http://www.governancenow.com/gov-now/judiciary/rss.xml,GovernanceNow: Judiciary
+http://www.governancenow.com/news/rss.xml,GovernanceNow: News
+http://www.governancenow.com/gov-now/parliament/rss.xml,GovernanceNow: Parliament
+http://www.governancenow.com/news/photo-stories/rss.xml,GovernanceNow: Photo Story
+http://www.governancenow.com/gov-now/policy/rss.xml,GovernanceNow: Policy
+http://www.governancenow.com/news/Protests-and-Petitions/rss.xml,GovernanceNow: Protests &amp; Petitions
+http://www.governancenow.com/news/public-reporter/rss.xml,GovernanceNow: Public Reporter
+http://www.governancenow.com/gov-next/rti/rss.xml,GovernanceNow: RTI
+http://www.governancenow.com/views/think-tank/rss.xml,GovernanceNow: Think Tank
+http://www.governancenow.com/news/top-stories/rss.xml,GovernanceNow: Top Stories
+http://www.governancenow.com/views/rss.xml,GovernanceNow: Views
+http://www.governancenow.com/gov-now/your-mp/rss.xml,GovernanceNow: Your MP
+http://www.governancenow.com/gov-next/egov/rss.xml,GovernanceNow: eGov
+http://pib.nic.in/newsite/rsshindi.aspx,Govt of India: PIB Hindi
+http://pib.nic.in/newsite/rssenglish.aspx,Govt of india: PIB
+http://pib.nic.in/newsite/rssenglish_fea.aspx,Govt of india: PIB Features
+http://pib.nic.in/newsite/rsshindi_fea.aspx,Govt of india: PIB Hindi Features
+http://www.thehindubusinessline.com/industry-and-economy/agri-biz/?service=rss,HBL: Agri-biz
+http://www.thehindubusinessline.com/companies/announcements/?service=rss,HBL: Announcements
+http://www.thehindubusinessline.com/features/smartbuy/automobiles/?service=rss,HBL: Automobiles
+http://www.thehindubusinessline.com/industry-and-economy/banking/?service=rss,HBL: Banking
+http://www.thehindubusinessline.com/features/brandline/?service=rss,HBL: BrandLine
+http://www.thehindubusinessline.com/opinion/columns/?service=rss,HBL: Columns
+http://www.thehindubusinessline.com/markets/commodities/?service=rss,HBL: Commodities
+http://www.thehindubusinessline.com/companies/?service=rss,HBL: Companies
+http://www.thehindubusinessline.com/companies/announcements/disclosures/?service=rss,HBL: Disclosures
+http://www.thehindubusinessline.com/opinion/editorial/?service=rss,HBL: Editorial
+http://www.thehindubusinessline.com/features/?service=rss,HBL: Features
+http://www.thehindubusinessline.com/features/smartbuy/gaming/?service=rss,HBL: Gaming
+http://www.thehindubusinessline.com/markets/gold/?service=rss,HBL: Gold
+http://www.thehindubusinessline.com/?service=rss,HBL: Home
+http://www.thehindubusinessline.com/industry-and-economy/?service=rss,HBL: Industry & Economy
+http://www.thehindubusinessline.com/industry-and-economy/info-tech/?service=rss,HBL: Info-tech
+http://www.thehindubusinessline.com/features/smartbuy/interiors/?service=rss,HBL: Interiors
+http://www.thehindubusinessline.com/features/investment-world/?service=rss,HBL: Investment World
+http://www.thehindubusinessline.com/features/smartbuy/laptops/?service=rss,HBL: Laptops
+http://www.thehindubusinessline.com/opinion/letters/?service=rss,HBL: Letters
+http://www.thehindubusinessline.com/features/life/?service=rss,HBL: Life
+http://www.thehindubusinessline.com/industry-and-economy/logistics/?service=rss,HBL: Logistics
+http://www.thehindubusinessline.com/features/smartbuy/luxury-and-fashion/?service=rss,HBL: Luxury &amp; Fashion
+http://www.thehindubusinessline.com/features/investment-world/market-strategy/?service=rss,HBL: Market Strategy
+http://www.thehindubusinessline.com/features/investment-world/market-watch/?service=rss,HBL: Market Watch
+http://www.thehindubusinessline.com/markets/?service=rss,HBL: Markets
+http://www.thehindubusinessline.com/features/mentor/?service=rss,HBL: Mentor
+http://www.thehindubusinessline.com/features/smartbuy/mobile-handsets/?service=rss,HBL: Mobile handsets
+http://www.thehindubusinessline.com/features/newmanager/?service=rss,HBL: New Manager
+http://www.thehindubusinessline.com/opinion/?service=rss,HBL: Opinion
+http://www.thehindubusinessline.com/features/smartbuy/other-gadgets/?service=rss,HBL: Other Gadgets
+http://www.thehindubusinessline.com/companies/announcements/others/?service=rss,HBL: Others
+http://www.thehindubusinessline.com/companies/announcements/results/?service=rss,HBL: Results
+http://www.thehindubusinessline.com/industry-and-economy/shipping-news/?service=rss,HBL: Shipping News
+http://www.thehindubusinessline.com/features/smartbuy/?service=rss,HBL: Smartbuy
+http://www.thehindubusinessline.com/markets/stock-markets/?service=rss,HBL: Stock Markets
+http://www.thehindubusinessline.com/markets/todays-pick/?service=rss,HBL: Today's Pick
+http://www.thehindubusinessline.com/features/smartbuy/watches-and-jewellery/?service=rss,HBL: Watches &amp; Jewellery
+http://www.thehindubusinessline.com/features/smartbuy/wines-and-malts/?service=rss,HBL: Wines &amp; Malts
+http://www.thehindubusinessline.com/features/investment-world/young-investor/?service=rss,HBL: Young Investor
+http://www.thehindubusinessline.com/features/eworld/?service=rss,HBL: eWorld
+http://feeds.hindustantimes.com/HT-BusinessSectionpage-Interviews,HT: Business Interviews
+http://feeds.hindustantimes.com/HT-ViewsColumnsSectionPage-TopColumns,HT: Columns
+http://feeds.hindustantimes.com/HT-BusinessSectionpage-Corporate,HT: Corporate
+http://feeds.hindustantimes.com/HT-BusinessSectionpage-Economy,HT: Economy
+http://feeds.hindustantimes.com/HT-ViewsSectionpage-Edits,HT: Editorial
+http://feeds.hindustantimes.com/HT-ViewsInterviewsSectionPage-TopStories,HT: Interviews
+http://feeds.hindustantimes.com/HT-BusinessSectionpage-Markets,HT: Markets
+http://feeds.feedburner.com/himvani/news,HimVani
+http://www.thehindu.com/sci-tech/agriculture/?service=rss,Hindu: Agriculture
+http://www.thehindu.com/news/states/andhra-pradesh/?service=rss,Hindu: Andhra Pradesh
+http://www.thehindu.com/arts/art/?service=rss,Hindu: Art
+http://www.thehindu.com/arts/?service=rss,Hindu: Arts
+http://www.thehindu.com/sport/athletics/?service=rss,Hindu: Athletics
+http://www.thehindu.com/news/cities/Bangalore/?service=rss,Hindu: Bangalore
+http://www.thehindu.com/arts/books/?service=rss,Hindu: Books
+http://www.thehindu.com/business/?service=rss,Hindu: Business
+http://www.thehindu.com/education/careers/?service=rss,Hindu: Careers
+http://www.thehindu.com/opinion/cartoon/?service=rss,Hindu: Cartoon
+http://www.thehindu.com/news/cities/Chennai/?service=rss,Hindu: Chennai
+http://www.thehindu.com/arts/cinema/?service=rss,Hindu: Cinema
+http://www.thehindu.com/news/cities/?service=rss,Hindu: Cities
+http://www.thehindu.com/news/cities/Coimbatore/?service=rss,Hindu: Coimbatore
+http://www.thehindu.com/education/college-and-university/?service=rss,Hindu: College & University
+http://www.thehindu.com/opinion/columns/?service=rss,Hindu: Columns
+http://www.thehindu.com/business/companies/?service=rss,Hindu: Companies
+http://www.thehindu.com/arts/crafts/?service=rss,Hindu: Crafts
+http://www.thehindu.com/sport/cricket/?service=rss,Hindu: Cricket
+http://www.thehindu.com/arts/dance/?service=rss,Hindu: Dance
+http://www.thehindu.com/news/cities/Delhi/?service=rss,Hindu: Delhi
+http://www.thehindu.com/health/diet-and-nutrition/?service=rss,Hindu: Diet & Nutrition
+http://www.thehindu.com/business/Economy/?service=rss,Hindu: Economy
+http://www.thehindu.com/opinion/editorial/?service=rss,Hindu: Editorial
+http://www.thehindu.com/education/?service=rss,Hindu: Education
+http://www.thehindu.com/sci-tech/energy-and-environment/?service=rss,Hindu: Energy & Environment
+http://www.thehindu.com/life-and-style/fashion/?service=rss,Hindu: Fashion
+http://www.thehindu.com/health/fitness/?service=rss,Hindu: Fitness
+http://www.thehindu.com/sport/football/?service=rss,Hindu: Football
+http://www.thehindu.com/sci-tech/gadgets/?service=rss,Hindu: Gadgets
+http://www.thehindu.com/health/?service=rss,Hindu: Health
+http://www.thehindu.com/arts/history-and-culture/?service=rss,Hindu: History & Culture
+http://www.thehindu.com/sport/hockey/?service=rss,Hindu: Hockey
+http://www.thehindu.com/?service=rss,Hindu: Home
+http://www.thehindu.com/news/cities/Hyderabad/?service=rss,Hindu: Hyderabad
+http://www.thehindu.com/business/Industry/?service=rss,Hindu: Industry
+http://www.thehindu.com/news/international/?service=rss,Hindu: International
+http://www.thehindu.com/sci-tech/internet/?service=rss,Hindu: Internet
+http://www.thehindu.com/opinion/interview/?service=rss,Hindu: Interview
+http://www.thehindu.com/education/issues/?service=rss,Hindu: Issues
+http://www.thehindu.com/news/states/karnataka/?service=rss,Hindu: Karnataka
+http://www.thehindu.com/news/states/kerala/?service=rss,Hindu: Kerala
+http://www.thehindu.com/life-and-style/kids/?service=rss,Hindu: Kids
+http://www.thehindu.com/news/cities/Kochi/?service=rss,Hindu: Kochi
+http://www.thehindu.com/opinion/lead/?service=rss,Hindu: Lead
+http://www.thehindu.com/life-and-style/leisure/?service=rss,Hindu: Leisure
+http://www.thehindu.com/opinion/letters/?service=rss,Hindu: Letters
+http://www.thehindu.com/life-and-style/?service=rss,Hindu: Life & Style
+http://www.thehindu.com/news/cities/Madurai/?service=rss,Hindu: Madurai
+http://www.thehindu.com/arts/magazine/?service=rss,Hindu: Magazine
+http://www.thehindu.com/news/cities/Mangalore/?service=rss,Hindu: Mangalore
+http://www.thehindu.com/business/markets/?service=rss,Hindu: Markets
+http://www.thehindu.com/health/medicine-and-research/?service=rss,Hindu: Medicine & Research
+http://www.thehindu.com/life-and-style/metroplus/?service=rss,Hindu: Metroplus
+http://www.thehindu.com/life-and-style/money-and-careers/?service=rss,Hindu: Money & Careers
+http://www.thehindu.com/sport/motorsport/?service=rss,Hindu: Motorsport
+http://www.thehindu.com/arts/music/?service=rss,Hindu: Music
+http://www.thehindu.com/news/national/?service=rss,Hindu: National
+http://www.thehindu.com/news/?service=rss,Hindu: News
+http://www.thehindu.com/life-and-style/nxg/?service=rss,Hindu: Nxg
+http://www.thehindu.com/obituary/?service=rss,Hindu: Obituary
+http://www.thehindu.com/opinion/op-ed/?service=rss,Hindu: Op-Ed
+http://www.thehindu.com/opinion/open-page/?service=rss,Hindu: Open Page
+http://www.thehindu.com/opinion/?service=rss,Hindu: Opinion
+http://www.thehindu.com/sport/other-sports/?service=rss,Hindu: Other Sports
+http://www.thehindu.com/news/states/other-states/?service=rss,Hindu: Other States
+http://www.thehindu.com/health/policy-and-issues/?service=rss,Hindu: Policy & Issues
+http://www.thehindu.com/sport/races/?service=rss,Hindu: Races
+http://www.thehindu.com/arts/radio-and-tv/?service=rss,Hindu: Radio & TV
+http://www.thehindu.com/opinion/Readers-Editor/?service=rss,Hindu: Readers' Editor
+http://www.thehindu.com/life-and-style/religion/?service=rss,Hindu: Religion
+http://www.thehindu.com/education/research/?service=rss,Hindu: Research
+http://www.thehindu.com/health/rx/?service=rss,Hindu: Rx
+http://www.thehindu.com/sci-tech/?service=rss,Hindu: S & T
+http://www.thehindu.com/education/school/?service=rss,Hindu: School
+http://www.thehindu.com/sci-tech/science/?service=rss,Hindu: Science
+http://www.thehindu.com/life-and-style/society/?service=rss,Hindu: Society
+http://www.thehindu.com/sport/?service=rss,Hindu: Sport
+http://www.thehindu.com/news/states/?service=rss,Hindu: States
+http://www.thehindu.com/news/states/tamil-nadu/?service=rss,Hindu: Tamil Nadu
+http://www.thehindu.com/sci-tech/technology/?service=rss,Hindu: Technology
+http://www.thehindu.com/sport/tennis/?service=rss,Hindu: Tennis
+http://www.thehindu.com/arts/theatre/?service=rss,Hindu: Theatre
+http://www.thehindu.com/news/cities/Thiruvananthapuram/?service=rss,Hindu: Thiruvananthapuram
+http://www.thehindu.com/news/cities/Tiruchirapalli/?service=rss,Hindu: Tiruchirapalli
+http://www.thehindu.com/life-and-style/travel/?service=rss,Hindu: Travel
+http://www.thehindu.com/news/cities/Vijayawada/?service=rss,Hindu: Vijayawada
+http://www.thehindu.com/news/cities/Visakhapatnam/?service=rss,Hindu: Visakhapatnam
+http://www.thehindu.com/life-and-style/youth/?service=rss,Hindu: Youth
+http://feeds.hindustantimes.com/HT-BusinessSectionpage-TopStories,Hindustan Times: Business
+http://feeds.hindustantimes.com/HT-Cricket-TopStories,Hindustan Times: Cricket
+http://feeds.hindustantimes.com/HT-Cricket-Columns,Hindustan Times: Cricket Columns
+http://feeds.hindustantimes.com/HT-IndiaSectionPage-Topstories,Hindustan Times: India
+http://feeds.hindustantimes.com/HT-IndiansAbroad-Topstories,Hindustan Times: Indians Abroad
+http://www.hindustantimes.com/RSSFeed/RssFeed.ashx?c=Common-Chunk-HT-UI-Common-LatestNews,Hindustan Times: Latest
+http://feeds.hindustantimes.com/HT-Homepage-LifestyleNews,Hindustan Times: Lifestyle
+http://feeds.hindustantimes.com/HT-NewsSectionPage-Topstories,Hindustan Times: News
+http://feeds.hindustantimes.com/HT-HomePage-TopStories,Hindustan Times: Top Stories
+http://feeds.hindustantimes.com/HT-ViewsSectionpage-Topstories,Hindustan Times: Views
+http://feeds.hindustantimes.com/HT-WorldSectionPage-Topstories,Hindustan Times: World
+http://syndication.indianexpress.com/rss/796/banking.xml,IE: Banking News
+http://syndication.indianexpress.com/rss/43/columns.xml,IE: Columns
+http://syndication.indianexpress.com/rss/795/corporate.xml,IE: Corporate News
+http://syndication.indianexpress.com/rss/794/economy.xml,IE: Economy News
+http://syndication.indianexpress.com/rss/72/from-the-fields.xml,IE: From the fields
+http://syndication.indianexpress.com/rss/708/kolkata.xml,IE: Kolkata
+http://syndication.indianexpress.com/rss/789/latest-news.xml,IE: Latest News
+http://syndication.indianexpress.com/rss/885/latest-news.xml,IE: Latest News
+http://syndication.indianexpress.com/rss/793/markets.xml,IE: Markets
+http://syndication.indianexpress.com/rss/772/money.xml,IE: Money
+http://syndication.indianexpress.com/rss/799/politics.xml,IE: Politics
+http://syndication.indianexpress.com/rss/889/regional.xml,IE: Regional News
+http://syndication.indianexpress.com/rss/800/regional.xml,IE: Regional News
+http://syndication.indianexpress.com/rss/698/science-&-technology.xml,IE: Science & Technology
+http://www.indlawnews.com/rss/rss.ashx?id=2,IndLaw News
+http://indiatoday.intoday.in/rss/article.jsp?sid=30,India Today: Cover Story
+http://indiatoday.intoday.in/rss/article.jsp?sid=34,India Today: Economy
+http://indiatoday.intoday.in/rss/article.jsp?sid=2,India Today: Eyecatchers
+http://indiatoday.intoday.in/rss/article.jsp?sid=146,India Today: Glass House
+http://indiatoday.intoday.in/rss/article.jsp?sid=61,India Today: International
+http://indiatoday.intoday.in/rss/article.jsp?sid=4,India Today: Must Read
+http://indiatoday.intoday.in/rss/article.jsp?sid=36,India Today: Nation
+http://indiatoday.intoday.in/rss/article.jsp?sid=24,India Today: Offtrack
+http://indiatoday.intoday.in/rss/article.jsp?sid=25,India Today: Society & Arts
+http://indiatoday.intoday.in/rss/article.jsp?sid=41,India Today: Sport
+http://indiatoday.intoday.in/rss/article.jsp?sid=21,India Today: States
+http://indiatoday.intoday.in/rss/article.jsp?sid=27,India Today: Your Week
+http://feeds.feedburner.com/IndiaBusinessNews,India eNews: Business
+http://feeds.feedburner.com/IndiaPoliticsNews,India eNews: Politics
+http://feeds.feedburner.com/IndiaLatestNews,India eNews: Top Headlines
+http://www.indianexpress.com/rss/711/ahmedabad.xml,Indian Express: Ahmedabad
+http://www.indianexpress.com/rss/37/business.xml,Indian Express: Business
+http://www.indianexpress.com/rss/694/business.xml,Indian Express: Business
+http://www.indianexpress.com/rss/710/chandigarh.xml,Indian Express: Chandigarh
+http://www.indianexpress.com/rss/35/edits-&-columns.xml,Indian Express: Columns
+http://www.indianexpress.com/rss/705/delhi.xml,Indian Express: Delhi
+http://www.indianexpress.com/rss/33/front-page.xml,Indian Express: Front Page
+http://www.indianexpress.com/rss/697/health.xml,Indian Express: Health
+http://www.indianexpress.com/rss/721/india.xml,Indian Express: India
+http://www.indianexpress.com/rss/698/infotech.xml,Indian Express: Infotech
+http://www.indianexpress.com/rss/38/international.xml,Indian Express: International
+http://www.indianexpress.com/rss/latest-news.xml,Indian Express: Latest
+http://www.indianexpress.com/rss/712/lucknow.xml,Indian Express: Lucknow
+http://www.indianexpress.com/rss/709/ludhiana.xml,Indian Express: Ludhiana
+http://www.indianexpress.com/rss/707/mumbai.xml,Indian Express: Mumbai
+http://www.indianexpress.com/rss/36/oped.xml,Indian Express: Op-Ed
+http://www.indianexpress.com/rss/706/pune.xml,Indian Express: Pune
+http://www.indianexpress.com/rss/723/sunday-stories.xml,Indian Express: Sunday
+http://www.indianexpress.com/rss/768/web-exclusive.xml,Indian Express: Web
+http://www.indianexpress.com/rss/695/world.xml,Indian Express: World
+http://outlookindia.com/rss/section/international,Outlook India: International
+http://outlookindia.com/rss/features/interviews,Outlook India: Interviews
+http://meghalayatimes.info/index.php?format=feed&amp;type=rss,Meghalaya Times
+http://feeds.mid-day.com/mdnews/bangalore,Mid-Day: Bangalore
+http://feeds.mid-day.com/mdopinion/columns,Mid-Day: Columns
+http://feeds.mid-day.com/mdnews/delhi,Mid-Day: Delhi
+http://feeds.mid-day.com/mdnews/mumbai,Mid-Day: Mumbai
+http://feeds.mid-day.com/mdnews/national,Mid-Day: National News
+http://feeds.mid-day.com/mdopinion,Mid-Day: Opinion
+http://feeds.mid-day.com/mdnews/pune,Mid-Day: Pune
+http://www.moneylife.in/site/rss.php,Moneylife
+http://www.ndtv.com/convergence/ndtv/rssbus.asp,NDTV Business
+http://www.ndtv.com/convergence/ndtv/rssnat.asp,NDTV National
+http://expressbuzz.com/rsssection-13.html,NIE: Andhra Pradesh
+http://expressbuzz.com/rsssection-107.html,NIE: Astrology
+http://expressbuzz.com/rsssection-17.html,NIE: Bangalore
+http://expressbuzz.com/rsssection-36.html,NIE: Books
+http://expressbuzz.com/rsssection-5.html,NIE: Business
+http://expressbuzz.com/rsssection-57.html,NIE: Cars
+http://expressbuzz.com/rsssection-18.html,NIE: Chennai
+http://expressbuzz.com/rsssection-3.html,NIE: Cities
+http://expressbuzz.com/rsssection-40.html,NIE: Columnists
+http://expressbuzz.com/rsssection-6.html,NIE: Cricket
+http://expressbuzz.com/rsssection-112.html,NIE: Cricket Columnists
+http://expressbuzz.com/rsssection-111.html,NIE: Cricket Features
+http://expressbuzz.com/rsssection-113.html,NIE: Cricket Interviews
+http://expressbuzz.com/rsssection-110.html,NIE: Cricket News
+http://expressbuzz.com/rsssection-38.html,NIE: Editorials
+http://expressbuzz.com/rsssection-114.html,NIE: Education
+http://expressbuzz.com/rsssection-94.html,NIE: English
+http://expressbuzz.com/rsssection-9.html,NIE: Entertainment
+http://expressbuzz.com/rsssection-104.html,NIE: Fashion
+http://expressbuzz.com/rsssection-30.html,NIE: Food
+http://expressbuzz.com/rsssection-79.html,NIE: Gallery
+http://expressbuzz.com/rsssection-66.html,NIE: Health
+http://expressbuzz.com/rsssection-95.html,NIE: Hindi
+http://expressbuzz.com/rsssection-76.html,NIE: Hyderabad
+http://expressbuzz.com/rsssection-101.html,NIE: Interviews
+http://expressbuzz.com/rsssection-99.html,NIE: Kannada
+http://expressbuzz.com/rsssection-14.html,NIE: Karnataka
+http://expressbuzz.com/rsssection-15.html,NIE: Kerala
+http://expressbuzz.com/rsssection-20.html,NIE: Kochi
+http://expressbuzz.com/rsssection-8.html,NIE: LifeStyle
+http://expressbuzz.com/rsssection-11.html,NIE: Magazine
+http://expressbuzz.com/rsssection-98.html,NIE: Malayalam
+http://expressbuzz.com/rsssection-1.html,NIE: Nation
+http://expressbuzz.com/rsssection-100.html,NIE: News
+http://expressbuzz.com/rsssection-39.html,NIE: Op-Ed
+http://expressbuzz.com/rsssection-12.html,NIE: Opinion
+http://expressbuzz.com/rsssection-53.html,NIE: Orissa
+http://expressbuzz.com/rsssection-102.html,NIE: Reviews
+http://expressbuzz.com/rsssection-93.html,NIE: Showbuzz
+http://expressbuzz.com/rsssection-7.html,NIE: Sport
+http://expressbuzz.com/rsssection-2.html,NIE: States
+http://expressbuzz.com/rsssection-96.html,NIE: Tamil
+http://expressbuzz.com/rsssection-16.html,NIE: Tamil Nadu
+http://expressbuzz.com/rsssection-56.html,NIE: Tech
+http://expressbuzz.com/rsssection-103.html,NIE: Television
+http://expressbuzz.com/rsssection-97.html,NIE: Telugu
+http://expressbuzz.com/rsssection-21.html,NIE: Thiruvananthapuram
+http://expressbuzz.com/rsssection-43.html,NIE: Time Out
+http://expressbuzz.com/rsssection-55.html,NIE: Travel
+http://expressbuzz.com/rsssection-109.html,NIE: Videos
+http://expressbuzz.com/rsssection-4.html,NIE: World
+http://expressbuzz.com/rsssection-108.html,NIE: voices
+http://outlookindia.com/rss/section/national,Outlook India: National
+http://www.newkerala.com/andhra-pradesh-news.xml,New Kerala: Andhra Pradesh
+http://www.newkerala.com/business-india-news.xml,New Kerala: Business India
+http://www.newkerala.com/gujarat-news.xml,New Kerala: Gujarat
+http://www.newkerala.com/health-news.xml,New Kerala: Health News
+http://www.newkerala.com/india-news.xml,New Kerala: India News
+http://www.newkerala.com/karnataka-news.xml,New Kerala: Karnataka
+http://www.newkerala.com/kerala-news.xml,New Kerala: Kerala News
+http://www.newkerala.com/maharashtra-news.xml,New Kerala: Maharashtra
+http://www.newkerala.com/punjab-news.xml,New Kerala: Punjab
+http://www.newkerala.com/sports-news.xml,New Kerala: Sports India
+http://www.newkerala.com/tamil-nadu-news.xml,New Kerala: Tamil Nadu
+http://www.newkerala.com/technology-news.xml,New Kerala: Technology
+http://www.newkerala.com/west-bengal-news.xml,New Kerala: West Bengal
+http://www.newkerala.com/world-news.xml,New Kerala: World News
+http://outlookindia.com/rss/features/opinion,Outlook India: Opinion
+http://outlookindia.com/rss/main/olb,Outlook India: Business
+http://outlookindia.com/rss/main/magazine,Outlook India: Magazine
+http://outlookindia.com/rss/main/olm,Outlook India: Money
+http://outlookindia.com/rss/main/olp,Outlook India: Profit
+http://outlookindia.com/rss/main/olt,Outlook India: Traveller
+http://outlookindia.com/rss/main/web,Outlook India: Web
+http://outlookindia.com/rss/main/wires,Outlook India: Wires
+http://outlookindia.com/rss/features/portraits,Outlook India: Portraits
+http://outlookindia.com/rss/features/profiles,Outlook India: Profiles
+http://www.rediff.com/rss/bporss.xml,Rediff: BPO News
+http://www.rediff.com/rss/moneyrss.xml,Rediff: Business
+http://www.rediff.com/rss/columnistrss.xml,Rediff: Columns
+http://www.rediff.com/rss/cricketrss.xml,Rediff: Cricket
+http://www.rediff.com/rss/getaheadrss.xml,Rediff: GetAhead
+http://www.rediff.com/rss/iycurss.xml,Rediff: Information You Can Use
+http://www.rediff.com/rss/interviewsrss.xml,Rediff: Interviews
+http://www.rediff.com/rss/intnewsrss.xml,Rediff: Intl News
+http://www.rediff.com/rss/moviesrss.xml,Rediff: Movies
+http://www.rediff.com/rss/newsrss.xml,Rediff: News
+http://www.rediff.com/rss/perfinrss.xml,Rediff: Personal Finance
+http://www.rediff.com/rss/sportsrss.xml,Rediff: Sports
+http://www.rediff.com/rss/inrss.xml,Rediff: Top Stories (India)
+http://sify.com/rss/finance.php,Sify Finance
+http://sify.com/rss/news.php,Sify News
+http://outlookindia.com/rss/section/Society,Outlook India: Society
+http://outlookindia.com/rss/section/sports,Outlook India: Sports
+http://timesofindia.indiatimes.com/rssfeeds/-2128821153.cms,Times Of India: Ahmedabad Times
+http://timesofindia.indiatimes.com/rssfeeds/-2128833038.cms,Times Of India: Bangalore Times
+http://timesofindia.indiatimes.com/rssfeeds/-2128830821.cms,Times Of India: Calcutta Times
+http://timesofindia.indiatimes.com/rssfeeds/-2128816762.cms,Times Of India: Chandigarh Times
+http://timesofindia.indiatimes.com/rssfeeds/2950623.cms,Times Of India: Chennai
+http://timesofindia.indiatimes.com/rssfeeds/-2128932452.cms,Times Of India: Cities
+http://timesofindia.indiatimes.com/rssfeeds/12051364.cms,Times Of India: Columnists
+http://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms,Times Of India: Delhi Times
+http://timesofindia.indiatimes.com/rssfeeds/-2128669051.cms,Times Of India: Editorial
+http://timesofindia.indiatimes.com/rssfeeds/1081479906.cms,Times Of India: Entertainment
+http://timesofindia.indiatimes.com/rssfeeds/3012535.cms,Times Of India: Goa
+http://timesofindia.indiatimes.com/rssfeedsdefault.cms,Times Of India: Home
+http://timesofindia.indiatimes.com/rssfeeds/-2128816011.cms,Times Of India: Hyderabad Times
+http://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms,Times Of India: India
+http://timesofindia.indiatimes.com/rssfeeds/-2128682902.cms,Times Of India: India Business
+http://timesofindia.indiatimes.com/rssfeeds/222022.cms,Times Of India: Indo-Pak Ties
+http://timesofindia.indiatimes.com/rssfeeds/1898408.cms,Times Of India: Interviews
+http://timesofindia.indiatimes.com/rssfeeds/-2128680634.cms,Times Of India: Intl Business
+http://timesofindia.indiatimes.com/rssfeeds/3012544.cms,Times Of India: Jaipur
+http://timesofindia.indiatimes.com/rssfeeds/23785592.cms,Times Of India: Kanpur Times
+http://timesofindia.indiatimes.com/rssfeeds/-2128819658.cms,Times Of India: Lucknow Times
+http://timesofindia.indiatimes.com/rssfeeds/-2128838597.cms,Times Of India: Mumbai
+http://timesofindia.indiatimes.com/rssfeeds/222023.cms,Times Of India: NRI News
+http://timesofindia.indiatimes.com/rssfeeds/30359534.cms,Times Of India: Pakistan
+http://timesofindia.indiatimes.com/rssfeeds/-2128817995.cms,Times Of India: Patna
+http://timesofindia.indiatimes.com/rssfeeds/671208.cms,Times Of India: Sports
+http://timesofindia.indiatimes.com/rssfeeds/3241488.cms,Times Of India: Subverse
+http://timesofindia.indiatimes.com/rssfeeds/1945062111.cms,Times Of India: Sunday
+http://timesofindia.indiatimes.com/rssfeeds/30359486.cms,Times Of India: The United States
+http://timesofindia.indiatimes.com/rssfeeds/878156304.cms,Times Of India: Thiruvananthapuram
+http://tehelka.com/feeds/tehfeed.xml,Tehelka
+http://telegraphindia.com/feeds/rss.asp?id=8,Telegraph: Bengal
+http://telegraphindia.com/feeds/rss.asp?id=9,Telegraph: Business
+http://telegraphindia.com/feeds/rss.asp?id=3,Telegraph: Front Page
+http://telegraphindia.com/feeds/rss.asp?id=14,Telegraph: North Bengal
+http://telegraphindia.com/feeds/rss.asp?id=6,Telegraph: Opinion
+http://telegraphindia.com/feeds/rss.asp?id=7,Telegraph: Sports
+http://feedproxy.google.com/oneindia-thatshindi-all,Thats Hindi
+http://feedproxy.google.com/oneindia-all-thatskannada,Thats Kannada
+http://www.expressindia.com/syndications/ie.xml,The Indian Express: Front Page
+http://www.navhindtimes.in/index.php?format=feed&amp;type=rss,The Navhind Times
+http://www.telegraphindia.com/feeds/rss.jsp?id=22,The Telegraph: Bihar
+http://www.telegraphindia.com/feeds/rss.jsp?id=21,The Telegraph: Orissa
+http://syndication.financialexpress.com/rss/385/travel-&-tourism.xml,Financial Express: Travel & Tourism
+http://syndication.financialexpress.com/rss/95/companies.xml,Financial Express: Companies
+http://syndication.financialexpress.com/rss/380/jobs.xml,Financial Express: Jobs
+http://syndication.financialexpress.com/rss/103/retail.xml,Financial Express: Retail
+http://syndication.financialexpress.com/rss/96/markets.xml,Financial Express: Markets
+http://syndication.financialexpress.com/rss/101/telecom.xml,Financial Express: Telecom
+http://syndication.financialexpress.com/rss/377/infotech.xml,Financial Express: Infotech
+http://syndication.financialexpress.com/rss/383/power.xml,Financial Express: Power
+http://syndication.financialexpress.com/rss/375/commodities.xml,Financial Express: Commodities
+http://syndication.financialexpress.com/rss/372/automobiles.xml,Financial Express: Automobiles
+http://syndication.financialexpress.com/rss/97/economy.xml,Financial Express: Economy
+http://syndication.financialexpress.com/rss/382/media.xml,Financial Express: Media
+http://syndication.financialexpress.com/rss/378/infrastructure.xml,Financial Express: Infrastructure
+http://syndication.financialexpress.com/rss/376/health-&-pharma.xml,Financial Express: Health & Pharma
+http://syndication.financialexpress.com/rss/626/business-wire.xml,Financial Express: Business Wire
+http://syndication.financialexpress.com/rss/98/world-news.xml,Financial Express: World News
+http://syndication.financialexpress.com/rss/latest-news.xml,Financial Express: Latest News
+http://syndication.financialexpress.com/rss/349/banking-&-finance.xml,Financial Express: Banking & Finance
+http://syndication.financialexpress.com/rss/379/insurance.xml,Financial Express: Insurance
+http://syndication.financialexpress.com/rss/100/politics.xml,Financial Express: Politics
+http://syndication.financialexpress.com/rss/384/real-estate.xml,Financial Express: Real Estate
+http://www.zeenews.com/rss/business-news.xml,Zee News: Business
+http://www.zeenews.com/rss/india-national-news.xml,Zee News: India National
+http://www.zeenews.com/rss/science-technology-news.xml,Zee News: Science and Technology
+http://www.zeenews.com/rss/south-asia-news.xml,Zee News: South Asia
+http://www.zeenews.com/rss/india-news.xml,Zee News: States
+http://www.zeenews.com/rss/world-news.xml,Zee News: World
