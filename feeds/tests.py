@@ -88,7 +88,7 @@ class FeedManager(TestCase):
 		testdb.setup_db(self)
 		cache.clear()
 
-		def test_update_feed(self):
+	def test_update_feed(self):
 		'''
 		update_feed should update the list of feeds of a source
 		'''
