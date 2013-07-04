@@ -1,5 +1,5 @@
 *.pyc
 *.log
 cache/
-nt_test.py
 localsettings.py
+nt.db
