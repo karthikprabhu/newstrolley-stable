@@ -138,7 +138,7 @@ class Tab(models.Model):
 		'''
 		#Get the last priority
 		priority = len(TabSource.objects.filter(tab=self))
-		logger.debug("Last priority=%s" % (str(source), str(priority)))
+		logger.debug("Last priority=%s" % str(priority))
 		if self.change_source_priority(source, priority):
 			logger.debug("Priority set. Deleting source")
 			TabSource.objects.get(tab=self, source=source).delete()
