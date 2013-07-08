@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load compress %}
 
 <!DOCTYPE html>
 <html>
@@ -8,17 +9,21 @@
 		<link rel="shortcut icon" href="{% static 'newsreader/media/favicon.ico' %}">
 
 		<!-- CSS Files -->
+		{% compress css %}
 		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/bootstrap.min.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/bootstrap-responsive.min.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/zocial/zocial.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/base.css' %}">
 		{% block page-specific-css %}{% endblock %}
+		{% endcompress %}
 
 		<!-- JS Files -->
+		{% compress js %}
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="{% static 'newsreader/js/bootstrap.min.js' %}"></script>
 		{% block page-specific-js %}{% endblock %}
+		{% endcompress %}
 	</head>
 	<body>
 		<!-- Top navigation bar -->
