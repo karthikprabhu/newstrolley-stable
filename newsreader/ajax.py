@@ -6,6 +6,7 @@ from dajaxice.decorators import dajaxice_register
 
 from newsreader.models import Tab, Source, TabSource
 from newstrolley.utils import get_object_or_none
+from newsreader import mail
 
 import logging
 logger = logging.getLogger(__name__)
@@ -124,4 +125,30 @@ def delete_tab(request, tab_id):
 		success = True
 
 	logger.info("Sending response(delete_tab)")
+	return simplejson.dumps({'success': success})
+
+'''
+-------------------------
+Account management
+-------------------------
+'''
+
+@dajaxice_register
+def resend_confirmation_mail(request):
+	logger.info("Re-sending verification mail for user %s" % str(request.user))
+	success = False
+
+	if request.user.is_authenticated():
+		#If the user is authenticated, then resend the mail only if the account is not verified
+		if not request.user.verified:
+			logger.debug("%s account is inactive" % str(request.user))
+			name = request.user.name;
+			email = request.user.email;
+			token = request.user.get_email_confirmation_token()
+
+			logger.debug("Sending verification mail to user %s with token %s" % (str(request.user), str(token)))
+			mail.send_confirmation_mail(str(name), str(email), str(token))
+			success = True
+
+	logger.info("Sending response(resend_confirmation_mail)")
 	return simplejson.dumps({'success': success})

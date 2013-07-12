@@ -1,0 +1,23 @@
+{% extends "newsreader/base.html" %}
+{% load staticfiles %}
+
+{% block title %}NewsTrolley - {% if verified %}Email address verified{% else %}Error{% endif %}{% endblock %}
+
+{% block main-container %}
+	{% if verified %}
+	<div class="alert alert-success pagination-centered span3 offset4" style="margin-top: 20px">
+		<img src="{% static 'newsreader/media/mail_check.png' %}" height="48" width="48" alt="Success" />
+		<h3>Email address verified</h3>
+		<p>Thank you for verifying your email address</p>
+	</div>
+	{% else %}
+	<div class="row">
+		<div class="alert alert-error pagination-centered span4 offset4" style="margin-top: 20px">
+			<img src="{% static 'newsreader/media/dialog_warning.png' %}" height="48" width="48" alt="Error" />
+			<h3>Error verifying email address</h3>
+			<p>There was a problem verifying your email address. Please contact <a href="mailto:support@newstrolley.com">Support</a> for further assistance</p>
+		</div>
+	</div>
+	{% endif %}
+	<div class="clearfix"></div>
+{% endblock %}

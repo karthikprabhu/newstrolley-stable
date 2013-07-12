@@ -97,6 +97,24 @@ def logout(request):
 	auth_logout(request)
 	return HttpResponseRedirect(reverse('newsreader:index'))
 
+def confirm_email(request):
+	email = request.GET.get('email', None)
+	token = request.GET.get('token', None)
+	
+	context = {
+		'verified': False
+	}
+	
+	if email and token:
+		user = get_object_or_404(NTUser, email=email)
+		#If the provided token is valid, then activate the account
+		if user.get_email_confirmation_token() == token:
+			user.verified = True
+			user.save()
+			context['verified'] = True
+
+	return render(request, 'newsreader/confirm-email.html', context)
+
 '''
 -------------------------
 Tabs

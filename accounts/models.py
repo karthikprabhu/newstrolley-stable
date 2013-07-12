@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import BaseUserManager, UserManager, AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
 from django.core.validators import validate_email
+from django.conf import settings
+
+import hashlib
 
 class NTUserManager(BaseUserManager):
 	#Adds a new user to the database. superuser value determines if the user is a superuser or not
@@ -42,6 +45,14 @@ class NTUser(AbstractBaseUser, PermissionsMixin):
 	is_active = models.BooleanField('active', default=False,
         help_text='Designates whether this user should be treated as '
                     'active. Unselect this instead of deleting accounts.')
+
+	verified = models.BooleanField('email verified', default=False)
 	
 	def get_short_name(self):
 		return ''
+
+	def get_email_confirmation_token(self):
+		message = str(self.id) + str(self.name) + str(self.email) + str(settings.SECRET_KEY)
+		m = hashlib.md5()
+		m.update(message)
+		return m.hexdigest()

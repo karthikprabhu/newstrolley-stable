@@ -45,8 +45,38 @@ $(document).ready(function(){
 	var password_regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 	register("#password", password_regex, "Password should contain a lowercase letter, an uppercase letter and a digit");
 
+	function retype_password() {
+		if($("#password").val() == $("#rpassword").val()) {
+			if($("#rpassword").parent().hasClass("error") || !$("#rpassword").parent().hasClass("success")) {
+				$("#rpassword").parent().removeClass("error");
+				$("#rpassword").parent().addClass("success");
+				$("#rpassword").tooltip("hide");
+				$("#rpassword").focus();
+			}
+			$("#rpassword").next().css("background", "url('/static/newsreader/media/success.png') no-repeat center");
+		}
+		else {
+			if($("#rpassword").parent().hasClass("success") || !$("#rpassword").parent().hasClass("error")) {
+				$("#rpassword").parent().removeClass("success");
+				$("#rpassword").parent().addClass("error");
+				$("#rpassword").tooltip("show");
+			}
+			$("#rpassword").next().css("background", "url('/static/newsreader/media/error.png') no-repeat center");
+		}
+	}
+	$("#rpassword").tooltip({
+		'placement': 'right',
+		'title': "Passwords do not match",
+		'container': '#signup-form-modal',
+		'trigger': 'manual'
+	});
+	
+	$("#rpassword").focus(function(){
+		setInterval(retype_password, 100);
+	});
+
 	function form_validate() {
-		if($("#email").parent().hasClass("success") && $("#name").parent().hasClass("success") && $("#password").parent().hasClass("success")) {
+		if($("#email").parent().hasClass("success") && $("#name").parent().hasClass("success") && $("#password").parent().hasClass("success") && $("#rpassword").parent().hasClass("success")) {
 			$("#create-account").removeClass("disabled");
 			return true;
 		}

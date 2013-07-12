@@ -7,6 +7,7 @@ from django.dispatch import receiver
 
 from accounts.models import NTUser
 from newstrolley.utils import get_object_or_none
+from newsreader import mail
 
 from PIL import Image
 from cStringIO import StringIO
@@ -249,3 +250,8 @@ def default_tabs(sender, **kwargs):
 		if source:
 			tab.add_source(source)
 			logger.debug("Default tab created successfuly")
+
+		logger.debug("Sending confirmation email to user %s" % str(user))
+		token = user.get_email_confirmation_token()
+		mail.send_confirmation_mail(str(user.name), str(user.email), str(token))
+		logger.debug("Mail sent to %s" % str(user.email))

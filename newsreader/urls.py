@@ -10,4 +10,5 @@ urlpatterns = patterns('newsreader.views',
     url(r'home/', views.home, name='home'),
     url(r'logout/', views.logout, name='logout'),
     url(r'add_tab/', views.add_tab, name='add_tab'),
+    url(r'confirm-email/', views.confirm_email, name='confirm_email'),
 )

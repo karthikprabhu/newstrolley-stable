@@ -6,6 +6,7 @@ Global variables
 var layoutmanager;
 var htmlgenerator;
 var fetch_lock = false;
+var email_lock = false;
 
 /*
 -------------------------
@@ -314,7 +315,26 @@ $(document).ready(function() {
 		'html': 'true',
 	});
 
-
+	//Resend email
+	if($("#resend-email").length > 0) {
+		$("#resend-email").click(function(event){
+			event.preventDefault();
+			if (!email_lock) {
+				email_lock = true;
+				$(this).next("span").text("Sending...");
+				
+				Dajaxice.newsreader.resend_confirmation_mail(function(data){
+					if(data['success']){
+						$("#resend-email").next("span").text("Email sent!");
+					}
+					else {
+						$("#resend-email").next("span").text("Error sending email. Try again!");
+						email_lock = false;
+					}
+				}, {});
+			};
+		});
+	}
 });
 
 function retrieve_sources() {

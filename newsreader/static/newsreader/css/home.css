@@ -21,10 +21,6 @@ body {
 }
 
 /* -- Tab Sidebar -- */
-#sidebar-tabs {
-	padding-top: 20px;
-}
-
 #sidebar-tabs .nav-tabs .active {
 	font-weight: bold;
 }
@@ -45,6 +41,15 @@ body {
 
 
 /* -- Tab Content -- */
+#email-verify h4 {
+	margin-bottom: 10px;
+}
+
+#email-verify img {
+	margin-right: 10px;
+	vertical-align: bottom;
+}
+
 #tab-content {
 	padding: 10px;
 }
