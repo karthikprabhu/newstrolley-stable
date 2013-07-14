@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block page-specific-js %}
+	<script type="text/javascript" src="{% static 'newsreader/js/form_validator.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'newsreader/js/landing.js' %}"></script>
 {% endblock %}
 
@@ -86,21 +87,17 @@
 		<form id="signup-form" method="post" action="{% url 'newsreader:signup' %}">
 			{% csrf_token %}
 			<div class="modal-body">
-				<div class="control-group input-append">
+				<div class="control-group">
 					<input id="name" type="text" name="name" placeholder="Name" />
-					<span class="add-on"></span>
 				</div>
-				<div class="control-group input-append">
+				<div class="control-group">
 					<input id="email" type="text" name="email" placeholder="Email Id" />
-					<span class="add-on"></span>
 				</div>
-				<div class="control-group input-append">
+				<div class="control-group">
 					<input id="password" type="password" name="password" placeholder="Password" />
-					<span class="add-on"></span>
 				</div>
-				<div class="control-group input-append">
+				<div class="control-group">
 					<input id="rpassword" type="password" name="password" placeholder="Retype Password" />
-					<span class="add-on"></span>
 				</div>
 				<input id="create-account" type="submit" class="btn btn-success" value="Create an Account" /><br />
 			</div>
