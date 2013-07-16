@@ -115,6 +115,10 @@ def confirm_email(request):
 
 	return render(request, 'newsreader/confirm-email.html', context)
 
+def reset_password(request):
+	
+	return render(request, 'newsreader/reset-password.html', None)
+
 '''
 -------------------------
 Tabs
