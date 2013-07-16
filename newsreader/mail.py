@@ -10,7 +10,7 @@ def send_confirmation_mail(name, email, token):
 
 	content_p1 = ('Thank you for signing up at NewsTrolley. '
 	'We are really pleased to have you on board with us. '
-	'We hope that your custom newspaper at NewsTrolley will become an essential part of your morning beverage and newspaper ritual. '
+	'We hope that your custom newspaper at NewsTrolley will become an essential part of your morning tea and newspaper ritual. '
 	'Make sure you have followed your favorite topics so you receive the news that matters.\n')
 	
 	content_p2 = ('In order for us to serve you better we need to verify that this is indeed your email address. '
