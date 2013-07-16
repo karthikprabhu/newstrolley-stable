@@ -250,40 +250,41 @@ function retrieve_tags() {
 	}
 }
 
-$(document).ready(function() {
-	var tab_id = get_active_tab();
-
+$( document ).ready(function() {
+	
+	//Initialize the HTMLGenerator and the LayoutManager
 	htmlgenerator = new NTHtmlGenerator();
 	var pattern = [
-		{"article_type": "featured", "no_repeat": "true"},
-		{"article_type": "portrait", "align": "left", "new_row": true},
-		{"article_type": "landscape", "align": "right"},
-		{"article_type": "landscape", "align": "right"},
-		{"article_type": "portrait", "align": "right", "new_row": true},
-		{"article_type": "landscape", "align": "left"},
-		{"article_type": "landscape", "align": "left"},
+		{ "article_type": "featured", "no_repeat": "true" },
+		{ "article_type": "portrait", "align": "left", "new_row": true },
+		{ "article_type": "landscape", "align": "right" },
+		{ "article_type": "landscape", "align": "right" },
+		{ "article_type": "portrait", "align": "right", "new_row": true },
+		{ "article_type": "landscape", "align": "left" },
+		{ "article_type": "landscape", "align": "left" },
 	];
-	layoutmanager = new LayoutManager(".newspaper-content", pattern, htmlgenerator.generate_article, htmlgenerator);
+	layoutmanager = new LayoutManager( ".newspaper-content", pattern, htmlgenerator.generate_article, htmlgenerator );
 	fetch_article();
 
-	$(window).scroll(function () {
-		if(isVisibleInView("#scroll-detect")) {
+	//Fetches more articles when scrolling
+	$( window ).scroll(function () {
+		if( isVisibleInView( "#scroll-detect" ) ) {
 			fetch_article();
 		}
 	});
 
 	//Make tab list sortable. Uses JQuery UI Sortable plugin
-	$("#sidebar-tabs > ul").sortable({
+	$( "#sidebar-tabs > ul" ).sortable({
 		items: 'li',
 		cursor: 'move',
-		stop: function(event, ui) {
+		stop: function( event, ui ) {
 			var tab_id = ui.item.children()[0].href;
-			var sidebar_tabs = $("#sidebar-tabs > ul").children("li");
+			var sidebar_tabs = $( "#sidebar-tabs > ul" ).children( "li" );
 			var new_position = 0;
 			for (var i = 0; i < sidebar_tabs.length; i++) {
-				var temp = $(sidebar_tabs[i]).children()[0].href;
-				var id = temp.substring(temp.lastIndexOf("/") + 1, temp.length);
-				if(temp == tab_id) {
+				var temp = $( sidebar_tabs[i] ).children()[0].href;
+				var id = temp.substring( temp.lastIndexOf( "/" ) + 1, temp.length );
+				if( temp == tab_id ) {
 					new_position = i + 1;
 					tab_id = id;
 					break;
@@ -291,44 +292,44 @@ $(document).ready(function() {
 			};
 			
 			//Ajax call
-			Dajaxice.newsreader.change_tab_position(function(data){}, {"tab_id": tab_id, "position": new_position});
+			Dajaxice.newsreader.change_tab_position( function( data ){}, { "tab_id": tab_id, "position": new_position } );
 		}
 	});
 
 	//Tab settings popover
-	$(".tab-settings button").popover({
+	$( ".tab-settings button" ).popover({
 		'html': 'true',
 		'placement': 'bottom',
 		'title': '<strong>Tab Settings</strong>',
 		'content': function() {
-			return $("#js-content").children()[0].outerHTML;
+			return $( "#js-content" ).children()[0].outerHTML;
 		}
 	});
 
 	//Add tab popover
-	$('#add-tab').popover({
+	$( "#add-tab" ).popover({
 		'trigger': 'click',
 		'title': '<strong>Custom tab</strong><a class="close" href="#" onclick="$(\'#add-tab\').popover(\'hide\')">&times;</a>',
 		'content': function() {
-			return $("#js-content").children()[1].outerHTML;
+			return $( "#js-content" ).children()[1].outerHTML;
 		},
 		'html': 'true',
 	});
 
 	//Resend email
-	if($("#resend-email").length > 0) {
-		$("#resend-email").click(function(event){
+	if( $( "#resend-email" ).length > 0 ) {
+		$( "#resend-email" ).click(function( event ){
 			event.preventDefault();
-			if (!email_lock) {
+			if ( !email_lock ) {
 				email_lock = true;
-				$(this).next("span").text("Sending...");
+				$( this ).next( "span" ).text( "Sending..." );
 				
-				Dajaxice.newsreader.resend_confirmation_mail(function(data){
-					if(data['success']){
-						$("#resend-email").next("span").text("Email sent!");
+				Dajaxice.newsreader.resend_confirmation_mail(function( data ){
+					if( data[ 'success' ] ){
+						$( "#resend-email" ).next( "span" ).text( "Email sent!" );
 					}
 					else {
-						$("#resend-email").next("span").text("Error sending email. Try again!");
+						$( "#resend-email" ).next( "span" ).text( "Error sending email. Try again!" );
 						email_lock = false;
 					}
 				}, {});
@@ -401,7 +402,7 @@ function delete_tab() {
 function delete_source(element) {
 	var source_name = element.textContent.replace("×", "").trim();
 	var tab_id = get_active_tab();
-	console.log(source_name);
+	
 	Dajaxice.newsreader.remove_source(function(data){
 		if(data["success"]) {
 			element.parentElement.delete;
