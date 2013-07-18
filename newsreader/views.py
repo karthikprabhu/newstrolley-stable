@@ -4,11 +4,15 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.db import IntegrityError
 from django.shortcuts import get_object_or_404
+from django.core.cache import cache
 
 from accounts.models import NTUser
 from newsreader.models import Tab
+from newstrolley.utils import get_object_or_none
+from newsreader import mail
 
 import logging
+import os
 logger = logging.getLogger(__name__)
 '''
 --------------------
@@ -116,8 +120,36 @@ def confirm_email(request):
 	return render(request, 'newsreader/confirm-email.html', context)
 
 def reset_password(request):
-	
-	return render(request, 'newsreader/reset-password.html', None)
+	context = {
+	}
+
+	if request.method == "POST":
+		#POST request is done to send the password reset mail
+		email = request.POST.get('email', None)
+
+		if email:
+			user = get_object_or_none(NTUser, email=email)
+			
+			#Send the email only if the user exists and is verified
+			if user and user.verified:
+				token = user.generate_password_reset_token()
+				mail.send_reset_password_mail(str(user.name), str(user.email), str(token))
+			else:
+				pass #No such user or your account was not verified
+	else:
+		#GET request is done to verify the token and reset user's password
+		email = request.GET.get('email', None)
+		token = request.GET.get('token', None)
+
+		if email and token:
+			user = get_object_or_none(NTUser, email=email)
+
+			if user and user.get_password_reset_token() == token:
+				pass #Token exists and valid. Let the user change the password
+			else:
+				pass #Incorrect token or token has expired
+
+	return render(request, 'newsreader/reset-password.html', context)
 
 '''
 -------------------------

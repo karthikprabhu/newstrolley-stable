@@ -3,8 +3,10 @@ from django.contrib.auth.models import BaseUserManager, UserManager, AbstractBas
 from django.utils import timezone
 from django.core.validators import validate_email
 from django.conf import settings
+from django.core.cache import cache
 
 import hashlib
+import os
 
 class NTUserManager(BaseUserManager):
 	#Adds a new user to the database. superuser value determines if the user is a superuser or not
@@ -56,3 +58,16 @@ class NTUser(AbstractBaseUser, PermissionsMixin):
 		m = hashlib.md5()
 		m.update(message)
 		return m.hexdigest()
+
+	def generate_password_reset_token(self):
+		cache_key = str(self.id) + "reset_password"
+		token = os.urandom(24).encode('hex')
+		expires = 6 * 60 * 60 #6 hours
+
+		cache.add(cache_key, token, expires)
+
+		return token
+
+	def get_password_reset_token(self):
+		cache_key = str(self.id) + "reset_password"
+		return cache.get(cache_key, None)
