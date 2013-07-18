@@ -61,8 +61,8 @@ def send_reset_password_mail(name, email, token):
 
 	send_mail(
 		subject,
-		from_mail,
 		content,
+		from_mail,
 		[email],
 		fail_silently=True
 	)

@@ -64,6 +64,7 @@ class NTUser(AbstractBaseUser, PermissionsMixin):
 		token = os.urandom(24).encode('hex')
 		expires = 6 * 60 * 60 #6 hours
 
+		self.delete_password_reset_token()
 		cache.add(cache_key, token, expires)
 
 		return token
@@ -71,3 +72,7 @@ class NTUser(AbstractBaseUser, PermissionsMixin):
 	def get_password_reset_token(self):
 		cache_key = str(self.id) + "reset_password"
 		return cache.get(cache_key, None)
+
+	def delete_password_reset_token(self):
+		cache_key = str(self.id) + "reset_password"
+		cache.delete(cache_key)

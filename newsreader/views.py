@@ -138,10 +138,9 @@ def reset_password(request):
 			if user and user.verified:
 				token = user.generate_password_reset_token()
 				mail.send_reset_password_mail(str(user.name), str(user.email), str(token))
+				
 				context['success'] = True
 				context['email'] = email
-			else:
-				pass #No such user or your account was not verified
 	elif request.method == "GET":
 		#GET request is done to verify the token and reset user's password
 		email = request.GET.get('email', None)
@@ -151,12 +150,11 @@ def reset_password(request):
 			context['form'] = False
 			context['verify_token'] = True
 			context['email'] = email
+			
 			user = get_object_or_none(NTUser, email=email)
-
 			if user and user.get_password_reset_token() == token:
+				user.delete_password_reset_token()
 				context['success'] = True #Token exists and valid. Let the user change the password
-			else:
-				pass #Incorrect token or token has expired
 
 	return render(request, 'newsreader/reset-password.html', context)
 
