@@ -249,3 +249,40 @@ class ViewsTest(TestCase):
 		response = self.client.post(reverse('newsreader:add_tab'), {'name': 'Small Image'})
 		response = self.client.post(reverse('newsreader:add_tab'), {'name': 'Small Image'})
 		self.assertEqual(response.get('Location'), self.home_page_url + '?tab_already_exists=' + 'Small%20Image')
+
+	'''
+	-------------------------
+	Reset password tests
+	-------------------------
+	'''
+	def test_reset_password_get(self):
+		#without parameters it must have default context values
+		response = self.client.get(reverse('newsreader:reset_password'))
+		self.assertTrue(response.context['form'] and not response.context['verify_token'] and not  response.context['success'])
+
+		#with correct parameters and incorrect token
+		response = self.client.get(reverse('newsreader:reset_password'), {'email': self.user_email, 'token': 'bullshit'})
+		self.assertTrue(not response.context['form'] and response.context['verify_token'] and not response.context['success'])
+
+		#with correct parameters and token
+		response = self.client.get(reverse('newsreader:reset_password'), {'email': self.user_email, 'token': self.user.generate_password_reset_token()})
+		self.assertTrue(not response.context['form'] and response.context['verify_token'] and response.context['success'])
+
+		#without token
+		response = self.client.get(reverse('newsreader:reset_password'), {'email': self.user_email})
+		self.assertTrue(response.context['form'] and not response.context['verify_token'] and not response.context['success'])
+
+	def test_reset_password_post(self):
+		#invalid email
+		response = self.client.post(reverse('newsreader:reset_password'), {'email': 'hababab@habababa.com'})
+		self.assertFalse(response.context['form'] or response.context['verify_token'] or response.context['success'])
+
+		#valid email, unverified user
+		response = self.client.post(reverse('newsreader:reset_password'), {'email': self.user_email})
+		self.assertFalse(response.context['form'] or response.context['verify_token'] or response.context['success'])
+
+		#valid email, verified user
+		self.user.verified = True
+		self.user.save()
+		response = self.client.post(reverse('newsreader:reset_password'), {'email': self.user_email})
+		self.assertFalse(response.context['form'] or response.context['verify_token'] or not response.context['success'])

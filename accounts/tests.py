@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.core.validators import ValidationError
 from django.db import IntegrityError
+from django.core.cache import cache
 
 from accounts.models import NTUser
 
@@ -71,3 +72,21 @@ class NTUserTests(TestCase):
 		#When superuser parameter is true
 		user = NTUser.objects.create_user(name='Karthik', email='kp@kp.com', password='Habababa', superuser=True)
 		self.assertTrue(user.is_staff and user.is_superuser)
+
+	'''
+	-------------------------
+	NTUser methods tests
+	-------------------------
+	'''
+	def test_password_reset_token(self):
+		#Generate the token
+		user = NTUser.objects.create_user(name='Karthik', email='k.karthik.prabhu@gmail.com', password='Habababa')
+		token = user.generate_password_reset_token()
+
+		#Verify the token
+		self.assertEqual(token, user.get_password_reset_token())
+
+		#Delete the token and check
+		cache_key = str(user.id) + "reset_password"
+		cache.delete(cache_key)
+		self.assertIsNone(user.get_password_reset_token())

@@ -5,6 +5,10 @@
 	margin-left: -135px;
 }
 
+#email-login label > input {
+	vertical-align: top;
+}
+
 #signup-error {
 	margin-bottom: 5px;
 }
