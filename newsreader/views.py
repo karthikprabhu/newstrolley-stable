@@ -121,10 +121,14 @@ def confirm_email(request):
 
 def reset_password(request):
 	context = {
+		'form': True, #Shows the password-reset form
+		'verify_token': False, #If true, the operation is verify token, else send mail
+		'success': False, #If operation is successful, then True
 	}
 
 	if request.method == "POST":
 		#POST request is done to send the password reset mail
+		context['form'] = False
 		email = request.POST.get('email', None)
 
 		if email:
@@ -134,18 +138,21 @@ def reset_password(request):
 			if user and user.verified:
 				token = user.generate_password_reset_token()
 				mail.send_reset_password_mail(str(user.name), str(user.email), str(token))
+				context['success'] = True
 			else:
 				pass #No such user or your account was not verified
-	else:
+	elif request.method == "GET":
 		#GET request is done to verify the token and reset user's password
 		email = request.GET.get('email', None)
 		token = request.GET.get('token', None)
 
 		if email and token:
+			context['form'] = False
+			context['verify_token'] = True
 			user = get_object_or_none(NTUser, email=email)
 
 			if user and user.get_password_reset_token() == token:
-				pass #Token exists and valid. Let the user change the password
+				context['success'] = True #Token exists and valid. Let the user change the password
 			else:
 				pass #Incorrect token or token has expired
 
