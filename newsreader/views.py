@@ -139,6 +139,7 @@ def reset_password(request):
 				token = user.generate_password_reset_token()
 				mail.send_reset_password_mail(str(user.name), str(user.email), str(token))
 				context['success'] = True
+				context['email'] = email
 			else:
 				pass #No such user or your account was not verified
 	elif request.method == "GET":
@@ -149,6 +150,7 @@ def reset_password(request):
 		if email and token:
 			context['form'] = False
 			context['verify_token'] = True
+			context['email'] = email
 			user = get_object_or_none(NTUser, email=email)
 
 			if user and user.get_password_reset_token() == token:
