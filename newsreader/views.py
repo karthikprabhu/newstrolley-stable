@@ -133,14 +133,13 @@ def reset_password(request):
 
 		if email:
 			user = get_object_or_none(NTUser, email=email)
+			context['email'] = email
 			
 			#Send the email only if the user exists and is verified
 			if user and user.verified:
 				token = user.generate_password_reset_token()
 				mail.send_reset_password_mail(str(user.name), str(user.email), str(token))
-				
 				context['success'] = True
-				context['email'] = email
 	elif request.method == "GET":
 		#GET request is done to verify the token and reset user's password
 		email = request.GET.get('email', None)
@@ -153,10 +152,29 @@ def reset_password(request):
 			
 			user = get_object_or_none(NTUser, email=email)
 			if user and user.get_password_reset_token() == token:
-				user.delete_password_reset_token()
+				context['token'] = token
 				context['success'] = True #Token exists and valid. Let the user change the password
 
 	return render(request, 'newsreader/reset-password.html', context)
+
+def change_password(request):
+	token = request.POST.get('token', None)
+	email = request.POST.get('email', None)
+	password = request.POST.get('password', None)
+
+	context = {
+		'password_changed': False
+	}
+	print "%s" % str(request)
+	if token and email and password:
+		user = get_object_or_none(NTUser, email=email)
+		if user and user.get_password_reset_token() == token:
+			user.set_password(password)
+			user.save()
+			user.delete_password_reset_token()
+			context['password_changed'] = True
+
+	return render(request, 'newsreader/change-password.html', context)
 
 '''
 -------------------------
