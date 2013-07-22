@@ -1,15 +1,12 @@
 #login-modal {
 	position: fixed;
 	width: 270px;
-	top: 50%;
 	left: 50%;
 	margin-left: -135px;
-	margin-top: -103px;
 }
 
-#login-modal ul.unstyled li, #signup-form-modal>ul.unstyled li {
-	margin-bottom: 10px;
-	margin-top: 5px;
+#email-login label > input {
+	vertical-align: top;
 }
 
 #signup-error {
@@ -41,10 +38,8 @@ i.icon-news, i.icon-newspaper, i.icon-customize {
 #signup-form-modal {
 	position: fixed;
 	width: 295px;
-	top: 50%;
 	left: 50%;
 	margin-left: -147px;
-	margin-top: -150px;
 }
 
 #signup-form-modal>p:before, #signup-form-modal>p:after {

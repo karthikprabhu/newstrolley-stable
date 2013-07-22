@@ -259,3 +259,10 @@ COMPRESS_CSS_FILTERS = [
     'compressor.filters.css_default.CssAbsoluteFilter',
     'compressor.filters.cssmin.CSSMinFilter',
 ]
+
+#Email configuration
+EMAIL_HOST = localsettings.EMAIL_HOST
+EMAIL_HOST_USER = localsettings.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = localsettings.DB_PASSWORD
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587

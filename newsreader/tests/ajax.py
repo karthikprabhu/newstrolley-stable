@@ -169,3 +169,22 @@ class AjaxTests(TestCase):
 		#Invalid tab id
 		response = dajaxice_post(self.client, 'newsreader', 'delete_tab', {'tab_id': 100})
 		self.assertFalse(json.loads(response.content)['success'])
+
+	def test_resend_confirmation_mail(self):
+		'''
+		resend_confirmation_mail must resend the email address verification mail to a logged in user's email address
+		'''
+		#Anonymous user
+		response = dajaxice_post(self.client, 'newsreader', 'resend_confirmation_mail', {})
+		self.assertFalse(json.loads(response.content)['success'])
+
+		#Inactive user
+		self.client.login(email=self.user_email, password=self.user_pass)
+		response = dajaxice_post(self.client, 'newsreader', 'resend_confirmation_mail', {})
+		self.assertTrue(json.loads(response.content)['success'])
+
+		#Active user
+		self.user.verified = True
+		self.user.save()
+		response = dajaxice_post(self.client, 'newsreader', 'resend_confirmation_mail', {})
+		self.assertFalse(json.loads(response.content)['success'])

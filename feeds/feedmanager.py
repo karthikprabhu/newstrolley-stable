@@ -80,7 +80,9 @@ def get_content(user, tab_id):
 	if not articles:
 		logger.info("Trying to retrieve articles from database")
 		tab = get_object_or_none(Tab, id=tab_id, user=user)
+		
 		articles = []
+		tagged_articles = []
 		
 		if tab is not None:
 			logger.debug("Tab found: %s. Getting sources and tags" % str(tab))
@@ -95,17 +97,22 @@ def get_content(user, tab_id):
 				
 				#Make sure the source has the latest feeds
 				update_feed(source)
-				source_articles = Article.objects.filter(source=source, pub_date__gt=datetime.now(tzlocal())-delta(days=2)).order_by('-pub_date')
+				source_articles = Article.objects.filter(source=source, pub_date__gt=datetime.now(tzlocal())-delta(days=1)).order_by('-pub_date')
 				logger.debug("No of source articles found: %d" % len(source_articles))
 
 				#If tags are specified, filter articles with tags
 				if tags:
 					logger.debug("Filtering articles based on the tags")
-					source_articles = source_articles.filter(tags__in=tags).distinct()
-					logger.debug("No of filtered articles: %s" % len(source_articles))
+					tagged_articles_in_source = source_articles.filter(tags__in=tags).distinct()
+					
+					tagged_articles += tagged_articles_in_source
+					source_articles -= tagged_articles_in_source
+					
+					logger.debug("No of tagged articles: %s" % len(tagged_articles))
 
-				articles.extend(source_articles)
-
+				articles += source_articles
+			
+			articles = tagged_articles+articles
 			logger.info("No of articles retrieved: %d" % len(articles))
 			logger.info("Adding articles to cache")
 			#add the articles to cache

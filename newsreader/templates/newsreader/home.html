@@ -44,6 +44,13 @@
 	</div>
 	{% endif%}
 
+	{% if not user.verified %}
+	<div id="email-verify" class="alert alert-warning">
+		<h4><img src="{% static 'newsreader/media/mail_alert.png' %}" width="32" height="32"/>Email address not verified</h4> 
+		<p>We've sent a mail with the verification link to your email address <a href="mailto:{{ user.email }}">{{ user.email }}</a>. Please click on the link to verify your email address. If you haven't received the e-mail yet, <a id="resend-email" href="#">click here to resend</a>.<span class="muted"></span></p>
+	</div>
+	{% endif %}
+
 	<!-- Tab sidebar -->
 	<div class="row">
 		<div id="sidebar-tabs" class="tabbable tabs-left span12">

@@ -2,6 +2,11 @@ from django.db import models
 from django.contrib.auth.models import BaseUserManager, UserManager, AbstractBaseUser, PermissionsMixin
 from django.utils import timezone
 from django.core.validators import validate_email
+from django.conf import settings
+from django.core.cache import cache
+
+import hashlib
+import os
 
 class NTUserManager(BaseUserManager):
 	#Adds a new user to the database. superuser value determines if the user is a superuser or not
@@ -42,6 +47,32 @@ class NTUser(AbstractBaseUser, PermissionsMixin):
 	is_active = models.BooleanField('active', default=False,
         help_text='Designates whether this user should be treated as '
                     'active. Unselect this instead of deleting accounts.')
+
+	verified = models.BooleanField('email verified', default=False)
 	
 	def get_short_name(self):
 		return ''
+
+	def get_email_confirmation_token(self):
+		message = str(self.id) + str(self.name) + str(self.email) + str(settings.SECRET_KEY)
+		m = hashlib.md5()
+		m.update(message)
+		return m.hexdigest()
+
+	def generate_password_reset_token(self):
+		cache_key = str(self.id) + "reset_password"
+		token = os.urandom(24).encode('hex')
+		expires = 6 * 60 * 60 #6 hours
+
+		self.delete_password_reset_token()
+		cache.add(cache_key, token, expires)
+
+		return token
+
+	def get_password_reset_token(self):
+		cache_key = str(self.id) + "reset_password"
+		return cache.get(cache_key, None)
+
+	def delete_password_reset_token(self):
+		cache_key = str(self.id) + "reset_password"
+		cache.delete(cache_key)
