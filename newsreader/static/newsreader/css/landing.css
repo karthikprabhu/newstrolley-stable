@@ -22,6 +22,10 @@
 	margin-left: 0;
 }
 
+#landing-hero h1 {
+	font-weight: 300;
+}
+
 /* -- Features -- */
 i.icon-news, i.icon-newspaper, i.icon-customize {
 	background: url("../media/300x200.gif") no-repeat;
@@ -48,4 +52,14 @@ i.icon-news, i.icon-newspaper, i.icon-customize {
 
 #signup-form-modal>form {
 	margin: 0;
+}
+
+#login-btn {
+	background: none;
+	background-color: rgb(0, 136, 204);
+	border-radius: 0;
+}
+
+.row .span4 h3 {
+	font-weight: 400;
 }
