@@ -26,9 +26,9 @@
 			<img class="img-polaroid" src="{% static 'newsreader/media/newspapers2.jpg' %}">
 		</div>
 		<div class="span4 pull-left">
-			<h1>News Trolley</h1>
+			<h1>NewsTrolley</h1>
 			<p class="lead text-info">
-				<em>Build your personalized newspaper!</em>
+				Build your personalized newspaper!
 			</p>
 			<p>
 				News Trolley enables you to build a customizable newspaper that aggregates news from different sources, and lets you follow your favorite topics with ease. 
@@ -65,16 +65,28 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 			<h3 id="login-label" class="text-center">Sign In</h3>
 		</div>
-		<div class="modal-body text-center">
+		<div class="modal-body pagination-centered">
 			<form id="email-login" method="post" action="{% url 'newsreader:login' %}">
 				{% csrf_token %}
 				{% if login_error %}
 					<div class="alert alert-error">Incorrect e-mail/password</div>
 				{% endif %}
-				<input type="text" name="email" placeholder="Email ID" /><br />
-				<input type="password" name="password" placeholder="Password" /><br /> 
-				<input type="submit" class="btn btn-inverse" value="Login" /><br />
+				<div class="control-group">
+					<input type="text" name="email" placeholder="Email ID" />
+				</div>
+				<div class="control-group">
+					<input type="password" id="login-password" name="password" placeholder="Password" />
+				</div>
+				<div class="control-group ">
+					<label><input type="checkbox" /> Remember me</label>
+				</div>
+				<div class="control-group">
+					<button type="submit" class="btn btn-inverse">Login</button>
+				</div>
 			</form>
+		</div>
+		<div class="modal-footer">
+			<p class="text-center"><a href="reset-password">Forgot your password?</a></p>
 		</div>
 	</div>
 	

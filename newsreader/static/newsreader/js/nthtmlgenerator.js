@@ -16,7 +16,7 @@ NTHtmlGenerator.prototype.generate_tag = function(tag_name, onclick, delete_tag,
 		text: tag_name
 	}).get(0).outerHTML + 
 	$( "<a>", { 
-		click: onclick, 
+		onclick: onclick, 
 		html: ( delete_tag )? "&times;" : "+", 
 		title: ( ( delete_tag )? "Delete" : "Add" ) + tag_name 
 	}).get(0).outerHTML;

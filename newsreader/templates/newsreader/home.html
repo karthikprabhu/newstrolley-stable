@@ -71,7 +71,7 @@
 
 				<!-- Add tab -->
 				<div class="pagination-centered">
-					<a id="add-tab" class="btn large btn-success" href="#">Add Tab</a>
+					<a id="add-tab" class="btn large nt-mybutton" href="#">Add Tab</a>
 				</div>
 			</ul>
 
@@ -79,11 +79,11 @@
 			<div class="tab-content span9" id="tab-content">
 				<div class="tab-pane active">
 					<div class="tab-settings pull-right">
-						<button onclick="retrieve_tags()"><i class="icon-cog"></i></button>
+						<button class="nt-mybutton" onclick="retrieve_tags()"><i class="icon-cog"></i> Personalize</button>
 					</div>
 					<div class="newspaper-title text-center">
 						<h1>{{ user.newspaper_name }}</h1>
-						<small class="muted">{% now "l - N d, Y" %}</small>
+						<!-- <small class="muted">{% now "l - N d, Y" %}</small> -->
 					</div>
 					<div class="newspaper-content row">
 					</div>

@@ -39,7 +39,7 @@ def get_tags(request, query):
 	if query:
 		tags = Tag.objects.filter(name__contains=query)
 		tag_names = [tag.name for tag in tags]
-
+	
 	return simplejson.dumps({ "tags": tag_names })
 
 @dajaxice_register(method='GET')

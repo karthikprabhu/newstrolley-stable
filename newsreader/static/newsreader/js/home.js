@@ -182,7 +182,7 @@ function get_predictions(input) {
 		Dajaxice.tags.get_tags(function(data) {
 			var results = data["tags"];
 			var container = $(input.parentElement); //Get the parent element
-
+			
 			//Delete any previous tags
 			container.children("span").remove();
 			container.children("a").remove();
@@ -190,8 +190,7 @@ function get_predictions(input) {
 			//Append the results after the input box
 			for(var i=0; i<((results.length > 7)? 7 : results.length); i++) {
 				tag_elements = htmlgenerator.generate_tag(results[i], "add_tag(this.previousSibling)", false, true);
-				container.append(tag_elements[0].outerHTML);
-				container.append(tag_elements[1].outerHTML);
+				container.append(tag_elements);
 			};			
 		}, {"query": query});
 	}
@@ -228,11 +227,11 @@ function add_tag(tag_element) {
 //Appends the tag to the list of tags.
 function append_tag(tag_name, article) {
 	var new_tag_element = htmlgenerator.generate_tag(tag_name, "delete_tag(this.previousSibling, null)", true, true);
-
+	
 	if($("#tags>span:last").get(0) != undefined) //If there are already tags
-		$("#tags>span:last").next().after(new_tag_element[0].outerHTML + new_tag_element[1].outerHTML);
+		$("#tags>span:last").next().after(new_tag_element);
 	else //If this is the first tag
-		$($("#tags").children()[0]).before(new_tag_element[0].outerHTML + new_tag_element[1].outerHTML);
+		$($("#tags").children()[0]).before(new_tag_element);
 }
 
 //Retrieves the tags related to the tab

@@ -4,11 +4,15 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.db import IntegrityError
 from django.shortcuts import get_object_or_404
+from django.core.cache import cache
 
 from accounts.models import NTUser
 from newsreader.models import Tab
+from newstrolley.utils import get_object_or_none
+from newsreader import mail
 
 import logging
+import os
 logger = logging.getLogger(__name__)
 '''
 --------------------
@@ -114,6 +118,63 @@ def confirm_email(request):
 			context['verified'] = True
 
 	return render(request, 'newsreader/confirm-email.html', context)
+
+def reset_password(request):
+	context = {
+		'form': True, #Shows the password-reset form
+		'verify_token': False, #If true, the operation is verify token, else send mail
+		'success': False, #If operation is successful, then True
+	}
+
+	if request.method == "POST":
+		#POST request is done to send the password reset mail
+		context['form'] = False
+		email = request.POST.get('email', None)
+
+		if email:
+			user = get_object_or_none(NTUser, email=email)
+			context['email'] = email
+			
+			#Send the email only if the user exists and is verified
+			if user and user.verified:
+				token = user.generate_password_reset_token()
+				mail.send_reset_password_mail(str(user.name), str(user.email), str(token))
+				context['success'] = True
+	elif request.method == "GET":
+		#GET request is done to verify the token and reset user's password
+		email = request.GET.get('email', None)
+		token = request.GET.get('token', None)
+
+		if email and token:
+			context['form'] = False
+			context['verify_token'] = True
+			context['email'] = email
+			
+			user = get_object_or_none(NTUser, email=email)
+			if user and user.get_password_reset_token() == token:
+				context['token'] = token
+				context['success'] = True #Token exists and valid. Let the user change the password
+
+	return render(request, 'newsreader/reset-password.html', context)
+
+def change_password(request):
+	token = request.POST.get('token', None)
+	email = request.POST.get('email', None)
+	password = request.POST.get('password', None)
+
+	context = {
+		'password_changed': False
+	}
+	print "%s" % str(request)
+	if token and email and password:
+		user = get_object_or_none(NTUser, email=email)
+		if user and user.get_password_reset_token() == token:
+			user.set_password(password)
+			user.save()
+			user.delete_password_reset_token()
+			context['password_changed'] = True
+
+	return render(request, 'newsreader/change-password.html', context)
 
 '''
 -------------------------
