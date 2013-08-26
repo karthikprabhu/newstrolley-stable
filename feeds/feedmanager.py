@@ -106,15 +106,23 @@ def get_content(user, tab_id):
 					tagged_articles_in_source = source_articles.filter(tags__in=tags).distinct()
 					
 					tagged_articles += tagged_articles_in_source
-					source_articles -= tagged_articles_in_source
+					# source_articles -= tagged_articles_in_source
+					temp_articles = []
+					temp_articles += source_articles
+					for t_article in tagged_articles_in_source:
+						temp_articles.remove(t_article)
 					
 					logger.debug("No of tagged articles: %s" % len(tagged_articles))
 
-				articles += source_articles
+					articles += temp_articles
+				else:
+					articles += source_articles
 			
 			articles = tagged_articles+articles
+			
 			logger.info("No of articles retrieved: %d" % len(articles))
 			logger.info("Adding articles to cache")
+			
 			#add the articles to cache
 			cache.add(cache_key, articles, CACHE_EXPIRES)
 
