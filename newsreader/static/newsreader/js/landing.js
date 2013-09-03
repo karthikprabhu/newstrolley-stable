@@ -20,13 +20,15 @@ $( document ).ready(function() {
 	});
 
 	$( "#password" ).validate({
-		condition: "password",
-		invalidHelper: "Password must contain atleast 1 uppercase letter and 1 number",
+		condition: function( value ) {
+			return value.length >= 6;
+		},
+		invalidHelper: "Password must contain atleast 6 characters",
 	});
 
 	$( "#rpassword" ).validate({
 		condition: function( value ) {
-			return value == $( "#password" ).val();
+			return value.length >= 6 && value == $( "#password" ).val();
 		},
 		invalidHelper: "Passwords do not match"
 	});
