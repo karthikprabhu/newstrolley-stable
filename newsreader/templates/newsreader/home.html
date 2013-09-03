@@ -71,7 +71,7 @@
 
 				<!-- Add tab -->
 				<div class="pagination-centered">
-					<a id="add-tab" class="btn large nt-mybutton" href="#">Add Tab</a>
+					<button id="add-tab" class="btn large nt-mybutton"><i class="icon-plus"></i> New Page</button>
 				</div>
 			</ul>
 
@@ -79,7 +79,7 @@
 			<div class="tab-content span9" id="tab-content">
 				<div class="tab-pane active">
 					<div class="tab-settings pull-right">
-						<button class="nt-mybutton" onclick="retrieve_tags()"><i class="icon-cog"></i> Personalize</button>
+						<button class="btn large nt-mybutton" onclick="retrieve_tags()"><i class="icon-cog"></i> Personalize</button>
 					</div>
 					<div class="newspaper-title text-center">
 						<h1>{{ user.newspaper_name }}</h1>
@@ -143,11 +143,11 @@
 					<div class="pagination-centered"><button class="btn primary" role="menuitem" href"#" onclick="$('#add-source-modal').modal('show')">Add Source</button></div> 
 				</ul> 
 			</div> 
-			<h5 class="muted" style="margin-top:10px;">Tags</h5> 
+			<h5 class="muted" style="margin-top:10px;">Topics</h5> 
 			<div id="tags" class="well well-small"> 
-				<a onclick="create_popover(this)"><span class="label label-info">+ new tag</span></a>
+				<a onclick="create_popover(this)"><span class="label label-info">+ add topic</span></a>
 			</div> 
-			<button class="btn btn-danger" onclick="delete_tab()">Delete Tab</button>
+			<button class="btn nt-mybutton nt-red" onclick="delete_tab()"><i class="icon-white icon-trash"></i> Remove Page</button>
 			<div class="clearfix"></div>
 		</div>
 
@@ -155,10 +155,10 @@
 		<div class="pagination-centered">
 	        <form action="{% url 'newsreader:add_tab' %}" method="post" enctype="multipart/form-data" onsubmit="add_tab_validate(event, this)">
                 {% csrf_token %}
-				<input type="text" name="name" placeholder="Tab Name" /><br/>
-				<input type="file" name="image" placeholder="Tab picture URL (Optional)" /><br/>
-				<p style="color:blue">Image size must be &lt; 1MB.</p>
-				<input class="btn btn-primary" type="submit" value="Add Tab" />
+				<input type="text" name="name" placeholder="Page Title" /><br/>
+				<!-- <input type="file" name="image" placeholder="Tab picture URL (Optional)" /><br/>
+				<p style="color:blue">Image size must be &lt; 1MB.</p> -->
+				<button class="btn large nt-mybutton nt-green" type="submit"><i class="icon-white icon-plus-sign"></i> Add Page</button>
 	   		</form>
 		</div>
 

@@ -299,7 +299,7 @@ $( document ).ready(function() {
 	$( ".tab-settings button" ).popover({
 		'html': 'true',
 		'placement': 'bottom',
-		'title': '<strong>Tab Settings</strong>',
+		'title': '<strong>Page Settings</strong>',
 		'content': function() {
 			return $( "#js-content" ).children()[0].outerHTML;
 		}
@@ -308,7 +308,8 @@ $( document ).ready(function() {
 	//Add tab popover
 	$( "#add-tab" ).popover({
 		'trigger': 'click',
-		'title': '<strong>Custom tab</strong><a class="close" href="#" onclick="$(\'#add-tab\').popover(\'hide\')">&times;</a>',
+		'placement': 'bottom',
+		// 'title': '<strong>Custom tab</strong><a class="close" href="#" onclick="$(\'#add-tab\').popover(\'hide\')">&times;</a>',
 		'content': function() {
 			return $( "#js-content" ).children()[1].outerHTML;
 		},
