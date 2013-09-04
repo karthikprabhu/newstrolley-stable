@@ -1,0 +1,28 @@
+{% extends "newsreader/base.html" %}
+{% load staticfiles %}
+
+{% block title %}NewsTrolley - {{ heading }}{% endblock %}
+
+{% block page-specific-css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/article.css' %}">
+{% endblock %}
+
+{% block navbar-right-content %}
+	<div id="user-info" class="btn-group">
+		<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> {{ user.name }}</a>
+		<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+		 <ul class="dropdown-menu">
+		    <li><a href="#"><i class="icon-wrench"></i> Settings</a></li>
+		    <li><a href="{% url 'newsreader:logout' %}"><i class="icon-off"></i> Log out</a></li>
+  		</ul>
+	</div>
+{% endblock %}
+
+{% block main-container %}
+	<div id="original-article">
+		<iframe src="{{ link }}"></iframe>
+	</div>
+	<script type="text/javascript">
+	$( "#original-article" ).css( "height", $(window).height() - $( ".navbar" ).outerHeight() );
+	</script>
+{% endblock %}

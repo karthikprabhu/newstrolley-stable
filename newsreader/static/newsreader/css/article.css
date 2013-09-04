@@ -1,0 +1,49 @@
+body {
+	overflow: hidden;
+}
+
+.container {
+	width: 100%;
+}
+
+#original-article {
+	margin-top: -5px;
+	width: 100%;
+}
+
+#original-article iframe {
+	border: none;
+	min-height: 100%;
+	width: 100%;
+}
+
+.nt-mybutton {
+	background: none;
+	border: 1px solid rgb(100, 100, 100);
+	border-radius: 0;
+	color: rgb(100, 100, 100);
+	vertical-align: text-top;
+	text-shadow: none;
+}
+
+#user-info {
+	margin-top: 0;
+}
+
+#user-info .btn {
+	background: none;
+	background-color: rgb(0, 136, 204);
+	border-radius: 0;
+}
+
+@media (min-width: 980px) {
+	.nav-collapse {
+		display: inline-block;
+		float: right;
+		padding: 7px 0 0;
+	}
+}
+
+footer {
+	display: none;
+}

@@ -1,4 +1,5 @@
 from django.utils import simplejson
+from django.core.urlresolvers import reverse
 
 from dajaxice.decorators import dajaxice_register
 
@@ -29,7 +30,7 @@ def get_article(request, tab_id, article_no):
 
 			article = {
 				'title': article.get_heading(),
-				'link': str(article.link), 
+				'link': reverse('newsreader:article', kwargs={'article_no': article.id}), 
 				'pubDate': format_datetime(article.pub_date), 
 				'summary': article.get_summary(), 
 				'tags':[tag.name for tag in article.tags.all()]

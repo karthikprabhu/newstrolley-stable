@@ -10,6 +10,7 @@ from accounts.models import NTUser
 from newsreader.models import Tab
 from newstrolley.utils import get_object_or_none
 from newsreader import mail
+from feeds.models import Article
 
 import logging
 import os
@@ -197,3 +198,22 @@ def add_tab(request):
 			return HttpResponseRedirect(reverse('newsreader:home') + '?tab_already_exists=' + name)
 
 	return HttpResponseRedirect(reverse('newsreader:home', kwargs={'tab_id': tab.id}))
+
+'''
+-------------------------
+Article Page
+-------------------------
+'''
+def article(request, article_no=None):
+	if not article_no:
+		return HttpResponseRedirect(reverse('newsreader:index'))
+	
+	article = get_object_or_none(Article, id=article_no)
+	if not article:
+		return HttpResponseRedirect(reverse('newsreader:index'))
+	
+	context = {}
+	context['heading'] = article.get_heading()
+	context['link'] = article.link
+	
+	return render(request, 'newsreader/article.html', context)
