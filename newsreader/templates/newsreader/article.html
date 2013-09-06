@@ -112,7 +112,9 @@
 			<p>Already have an account? <button class="btn nt-mybutton" id="signup-login">Log In</button></p>
 		</div>
 	</div>
+	{% if not user.is_authenticated %}
 	<script type="text/javascript">
 	$("#original-article iframe").load(function() {$("#signup-form-modal").modal("show")});
 	</script>
+	{% endif %}
 {% endblock %}
