@@ -88,10 +88,13 @@
 				<div class="control-group">
 					<button type="submit" class="btn nt-mybutton">Login</button>
 				</div>
+				<div id="new-signup" class="control-group">
+					<a>Haven't registered yet? Sign Up</a>
+				</div>
 			</form>
 		</div>
 		<div class="modal-footer">
-			<p class="text-center"><a href="reset-password">Forgot your password?</a></p>
+			<p class="text-center"><a href="{% url 'newsreader:index' %}reset-password">Forgot your password?</a></p>
 		</div>
 	</div>
 	
@@ -116,11 +119,11 @@
 				<div class="control-group">
 					<input id="rpassword" type="password" name="password" placeholder="Retype Password" />
 				</div>
-				<input id="create-account" type="submit" class="btn btn-success" value="Create an Account" /><br />
+				<input id="create-account" type="submit" class="btn nt-mybutton nt-green" value="Create an Account" /><br />
 			</div>
 		</form>
 	  	<div class="modal-footer">
-			<p>Already have an account? <button class="btn btn-info" id="signup-login">Log In</button></p>
+			<p>Already have an account? <button class="btn nt-mybutton" id="signup-login">Log In</button></p>
 		</div>
 	</div>
 

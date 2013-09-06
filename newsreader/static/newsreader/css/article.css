@@ -2,6 +2,18 @@ body {
 	overflow: hidden;
 }
 
+#new-signup a:hover {
+	cursor: pointer;
+}
+
+#email-login label > input {
+	vertical-align: top;
+}
+
+#signup-error {
+	margin-bottom: 5px;
+}
+
 .container {
 	width: 100%;
 }
@@ -17,16 +29,14 @@ body {
 	width: 100%;
 }
 
-.nt-mybutton {
-	background: none;
-	border: 1px solid rgb(100, 100, 100);
-	border-radius: 0;
-	color: rgb(100, 100, 100);
-	vertical-align: text-top;
-	text-shadow: none;
+#user-info {
+	margin-top: 0;
 }
 
-#user-info {
+#login-btn {
+	background: none;
+	background-color: rgb(0, 136, 204);
+	border-radius: 0;
 	margin-top: 0;
 }
 
@@ -34,6 +44,14 @@ body {
 	background: none;
 	background-color: rgb(0, 136, 204);
 	border-radius: 0;
+}
+
+.nt-mybutton, .nt-mybutton:hover, .nt-mybutton:focus {
+	background: none;
+	background-color: rgb(0, 136, 204);
+	border-radius: 0;
+	color: white;
+	text-shadow: none;
 }
 
 @media (min-width: 980px) {
@@ -44,6 +62,60 @@ body {
 	}
 }
 
+@media (max-width: 800px) {
+	#login-btn {
+		float: left;
+	}
+}
+
 footer {
 	display: none;
+}
+
+#signup-form-modal {
+	position: fixed;
+	width: 685px;
+	left: 50%;
+	margin-left: -342px;
+}
+
+#signup-form-modal>p:before, #signup-form-modal>p:after {
+	content: "\2014"
+}
+
+#signup-form-modal>form {
+	margin: 0;
+}
+
+#login-modal {
+	position: fixed;
+	width: 270px;
+	left: 50%;
+	margin-left: -135px;
+}
+
+.modal-header h3 {
+	font-weight: normal;
+}
+
+#new-signup a:hover {
+	cursor: pointer;
+}
+
+#email-login, #new-signup {
+	margin-bottom: 0;
+}
+
+
+.nt-mybutton, .nt-mybutton:hover, .nt-mybutton:focus {
+	background: none;
+	background-color: rgb(0, 136, 204);
+	border-radius: 0;
+	color: white;
+	text-shadow: none;
+}
+
+.nt-green, .nt-green:hover, .nt-green:focus {
+	background-color: #00C13F;
+	color: white;
 }

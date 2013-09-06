@@ -7,7 +7,13 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/article.css' %}">
 {% endblock %}
 
+{% block page-specific-js %}
+	<script type="text/javascript" src="{% static 'newsreader/js/form_validator.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'newsreader/js/landing.js' %}"></script>
+{% endblock %}
+
 {% block navbar-right-content %}
+	{% if user.is_authenticated %}
 	<div id="user-info" class="btn-group">
 		<a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> {{ user.name }}</a>
 		<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
@@ -16,6 +22,9 @@
 		    <li><a href="{% url 'newsreader:logout' %}"><i class="icon-off"></i> Log out</a></li>
   		</ul>
 	</div>
+	{% else %}
+	<a id="login-btn" role="button" class="btn btn-info pull-right" href="#login-modal" data-toggle="modal">Login</a>
+	{% endif %}
 {% endblock %}
 
 {% block main-container %}
@@ -24,5 +33,86 @@
 	</div>
 	<script type="text/javascript">
 	$( "#original-article" ).css( "height", $(window).height() - $( ".navbar" ).outerHeight() );
+	</script>
+{% endblock %}
+
+{% block other-body-content %}
+	<!-- Popup login box -->
+	<div id="login-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="login-label" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3 id="login-label" class="text-center">Sign In</h3>
+		</div>
+		<div class="modal-body pagination-centered">
+			<form id="email-login" method="post" action="{% url 'newsreader:login' %}">
+				{% csrf_token %}
+				{% if login_error %}
+					<div class="alert alert-error">Incorrect e-mail/password</div>
+				{% endif %}
+				<div class="control-group">
+					<input type="text" name="email" placeholder="Email ID" />
+				</div>
+				<div class="control-group">
+					<input type="password" id="login-password" name="password" placeholder="Password" />
+				</div>
+				<div class="control-group ">
+					<label><input type="checkbox" /> Remember me</label>
+				</div>
+				<div class="control-group">
+					<button type="submit" class="btn nt-mybutton">Login</button>
+				</div>
+				<div id="new-signup" class="control-group">
+					<a>Haven't registered yet? Sign Up</a>
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<p class="text-center"><a href="{% url 'newsreader:index' %}reset-password">Forgot your password?</a></p>
+		</div>
+	</div>
+	
+	<!-- Sign up form -->
+	<div id="signup-form-modal" class="modal hide fade text-center" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Sign Up</h3>
+		</div>
+		<div class="span4 pull-left">
+			<h1>NewsTrolley</h1>
+			<p class="lead text-info">
+				Build your own newspaper
+			</p>
+			<p>
+				Welcome to the newspaper of the future.
+			</p>
+			<p>	
+				At NewsTrolley, you can build a personal newspaper that fetches news from sources you trust, and organises it the way you want it to.
+				You get the news that you want, from the sources that you trust - and the way you want it.
+			</p>
+		</div>
+		<form id="signup-form" method="post" action="{% url 'newsreader:signup' %}">
+			{% csrf_token %}
+			<div class="modal-body">
+				<div class="control-group">
+					<input id="name" type="text" name="name" placeholder="Name" />
+				</div>
+				<div class="control-group">
+					<input id="email" type="text" name="email" placeholder="Email Id" />
+				</div>
+				<div class="control-group">
+					<input id="password" type="password" name="password" placeholder="Password" />
+				</div>
+				<div class="control-group">
+					<input id="rpassword" type="password" name="password" placeholder="Retype Password" />
+				</div>
+				<input id="create-account" type="submit" class="btn nt-mybutton nt-green" value="Create an Account" /><br />
+			</div>
+		</form>
+	  	<div class="modal-footer">
+			<p>Already have an account? <button class="btn nt-mybutton" id="signup-login">Log In</button></p>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$("#original-article iframe").load(function() {$("#signup-form-modal").modal("show")});
 	</script>
 {% endblock %}

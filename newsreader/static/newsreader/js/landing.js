@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+	console.log("@!$!#!@@###############################@@@@@@@@@@@@@@@@@@@@@@@");
 	$( "#signup-login" ).click(function(){
 		$( "#signup-form-modal" ).modal( "hide" );
 		$( "#login-modal" ).modal( "show" );
@@ -34,4 +35,9 @@ $( document ).ready(function() {
 	});
 
 	$( "#signup-form" ).validate({});
+	
+	$( "#new-signup a" ).click(function(){
+		$( "#signup-form-modal" ).modal( "show" );
+		$( "#login-modal" ).modal( "hide" );
+	});
 });
