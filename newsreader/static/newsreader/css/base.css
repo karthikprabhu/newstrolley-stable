@@ -23,3 +23,7 @@ footer.footer p.pull-left {
 		float: left;
 	}
 }
+
+.navbar-inverse .brand {
+	color: #FFF;
+}
