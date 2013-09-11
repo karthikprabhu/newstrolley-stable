@@ -4,7 +4,7 @@ from django.core.urlresolvers import reverse
 from dajaxice.decorators import dajaxice_register
 
 from feeds.feedmanager import get_content
-from newstrolley.utils import format_datetime
+from newstrolley.utils import format_datetime, generate_seo_link
 
 import logging
 logger = logging.getLogger(__name__)
@@ -30,7 +30,7 @@ def get_article(request, tab_id, article_no):
 
 			article = {
 				'title': article.get_heading(),
-				'link': reverse('newsreader:article', kwargs={'article_no': article.id}), 
+				'link': reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 'article_no': article.id}), 
 				'pubDate': format_datetime(article.pub_date), 
 				'summary': article.get_summary(), 
 				'tags':[tag.name for tag in article.tags.all()]
