@@ -243,3 +243,12 @@ a > span.label-info:hover {
 	background-color: rgb(0, 136, 204);
 	border-radius: 0;
 }
+
+.nt-left:hover, .nt-right:hover, .headlines:hover {
+	border: 1px solid rgb(0, 136, 204);
+	cursor: pointer;
+}
+
+.headlines:hover {
+	border-top-width: 3px;
+}

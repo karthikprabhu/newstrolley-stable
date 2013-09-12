@@ -25,6 +25,10 @@ function fetch_article(){
 		if(data['success'] && data['article'] != null){
 			//If article was retrieved, then add it to the layout
 			layoutmanager.add_article(data['article']);
+			$( ".article-content, .article-content + .clearfix" ).click(function() {
+				//Click function here. Even the title should call this
+				window.location = $( this ).parent().children( 0 ).children( 0 ).attr( "href" );
+			});
 			fetch_lock = false;
 			
 			if(isVisibleInView("#scroll-detect")) {
