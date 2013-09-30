@@ -1,6 +1,5 @@
 {% extends "newsreader/base.html" %}
 {% load staticfiles %}
-{% load dajaxice_templatetags %}
 
 {% block title %}NewsTrolley - {{ user.name }}{% endblock %}
 
@@ -13,7 +12,6 @@
 	<script type="text/javascript" src="{%static 'newsreader/js/layoutmanager.js' %}"></script>
 	<script type="text/javascript" src="{% static 'newsreader/js/nthtmlgenerator.js' %}"></script>
 	<script type="text/javascript" src="{% static 'newsreader/js/home.js' %}"></script>
-	{% dajaxice_js_import %}
 {% endblock %}
 
 {% block navbar-main-content %}

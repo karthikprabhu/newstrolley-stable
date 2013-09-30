@@ -8,6 +8,10 @@ from newsreader.models import Tab, Source, TabSource
 from newstrolley.utils import get_object_or_none
 from newsreader import mail
 
+import feeds.models as feed_models
+
+from datetime import date, timedelta
+
 import logging
 logger = logging.getLogger(__name__)
 
@@ -132,7 +136,6 @@ def delete_tab(request, tab_id):
 Account management
 -------------------------
 '''
-
 @dajaxice_register
 def resend_confirmation_mail(request):
 	logger.info("Re-sending verification mail for user %s" % str(request.user))
@@ -152,3 +155,15 @@ def resend_confirmation_mail(request):
 
 	logger.info("Sending response(resend_confirmation_mail)")
 	return simplejson.dumps({'success': success})
+
+'''
+-------------------------
+Ticker
+-------------------------
+'''
+@dajaxice_register
+def get_ticker_feed(request):
+	logger.info("Re-fetching ticker feed.")
+	feed_list = [(article.heading, article.link) for article in feed_models.Article.objects.all().filter(pub_date__gte=date.today()-timedelta(days=1)).order_by('-pub_date')][:10]
+	logger.info("Sending response(get_ticker_feed)")
+	return simplejson.dumps({'articles': feed_list})
