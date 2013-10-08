@@ -46,7 +46,7 @@ NTHtmlGenerator.prototype.generate_article = function(article, article_type, ali
 	.append(
 		//Generate the summary
 		$( "<div>", { class: "article-content" } )
-		.append( $( article[ "summary" ] ) )
+		.append( this.get_image(article["summary"] ) )
 		.append(
 			$("<p>", { text: $("<p>").append(article["summary"]).text() } )
 		)
@@ -110,4 +110,15 @@ NTHtmlGenerator.prototype.generate_source_element = function(source_name) {
 		)
 		.attr( "role", "menuitem" )
 	).get(0).outerHTML;
+}
+
+NTHtmlGenerator.prototype.get_image = function(summary) {
+	var images = "";
+	$.each( $( "<div>" ).append( summary ).children( "img" ), function( index, value ) {
+		if( value.width > 5 || value.height > 5 ) {
+			images += value.outerHTML;
+		}
+	});
+	
+	return images;
 }

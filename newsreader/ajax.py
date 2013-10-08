@@ -2,10 +2,12 @@ from django.utils import simplejson
 from django.core import cache
 from django.contrib.auth.models import AnonymousUser
 
+from django.core.urlresolvers import reverse
+
 from dajaxice.decorators import dajaxice_register
 
 from newsreader.models import Tab, Source, TabSource
-from newstrolley.utils import get_object_or_none
+from newstrolley.utils import get_object_or_none, generate_seo_link
 from newsreader import mail
 
 import feeds.models as feed_models
@@ -164,6 +166,6 @@ Ticker
 @dajaxice_register
 def get_ticker_feed(request):
 	logger.info("Re-fetching ticker feed.")
-	feed_list = [(article.heading, article.link) for article in feed_models.Article.objects.all().filter(pub_date__gte=date.today()-timedelta(days=1)).order_by('-pub_date')][:10]
+	feed_list = [(article.heading, reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 'article_no': article.id})) for article in feed_models.Article.objects.all().filter(pub_date__gte=date.today()-timedelta(days=1)).order_by('-pub_date')][:10]
 	logger.info("Sending response(get_ticker_feed)")
 	return simplejson.dumps({'articles': feed_list})
