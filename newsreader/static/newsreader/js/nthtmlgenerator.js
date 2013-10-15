@@ -88,7 +88,7 @@ NTHtmlGenerator.prototype.generate_new_tag_element = function() {
 	.append(
 		$( "<span>", {
 			class: "label label-info",
-			text: "+ new tag"
+			text: "+ add topic"
 		})
 	);
 }
