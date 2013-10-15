@@ -30,6 +30,7 @@ def get_article(request, tab_id, article_no):
 
 			article = {
 				'title': article.get_heading(),
+				'mlink': article.link,
 				'link': reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 'article_no': article.id}), 
 				'pubDate': format_datetime(article.pub_date), 
 				'summary': article.get_summary(), 

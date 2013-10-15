@@ -25,9 +25,16 @@ function fetch_article(){
 		if(data['success'] && data['article'] != null){
 			//If article was retrieved, then add it to the layout
 			layoutmanager.add_article(data['article']);
-			$( ".article-content, .article-content + .clearfix" ).click(function() {
+			$( ".article-content, .article-content + .clearfix, .title a, .news-item marquee a" ).click(function( e ) {
+				$( "#article-modal .modal-body iframe" ).attr( "src", "about:blank" );
+				e.preventDefault();
 				//Click function here. Even the title should call this
-				window.location = $( this ).parent().children( 0 ).children( 0 ).attr( "href" );
+				var heading = $( this ).parent().children( 0 ).children( 0 ).get(0);
+				if(heading == null)
+					heading = this;
+				var link = $( heading ).attr( "data-link" );
+				$( "#article-modal .modal-body iframe" ).attr( "src", link );
+				$( "#article-modal" ).modal( "show" );
 			});
 			fetch_lock = false;
 			

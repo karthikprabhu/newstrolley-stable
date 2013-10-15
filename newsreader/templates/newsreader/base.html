@@ -65,13 +65,16 @@
 				<script type="text/javascript">
 					Dajaxice.newsreader.get_ticker_feed(function(data){
 						$.each(data['articles'], function(index, article){
-							$('.news-item marquee').append("<a href=\"" + article[1] + "\">" + article[0] + "</a><i class=\"separator\"></i>");
+							$('.news-item marquee').append("<a href=\"" + article[1] + "\" data-link=\"" + article[2] + "\">" + article[0] + "</a><i class=\"separator\"></i>");
 						});
 						$( ".news-item a" ).hover(function() {
 							$( ".news-item marquee" ).attr( "scrollamount", "0" );
 						}, function() {
 							$( ".news-item marquee" ).attr( "scrollamount", "3" );
 						});
+					});
+					$( ".news-item marquee a" ).click( function(e) {
+						e.preventDefault();
 					});
 				</script>
 			</div>

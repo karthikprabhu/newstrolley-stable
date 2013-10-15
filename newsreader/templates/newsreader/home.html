@@ -81,7 +81,6 @@
 					</div>
 					<div class="newspaper-title text-center">
 						<h1>{{ user.newspaper_name }}</h1>
-						<!-- <small class="muted">{% now "l - N d, Y" %}</small> -->
 					</div>
 					<div class="newspaper-content row">
 					</div>
@@ -130,6 +129,11 @@
 			<button class="btn btn-primary" onclick="add_sources()">Add Source</button>
 		</div>
 	</div>
+	<div id="article-modal" class="modal hide fade span12" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-body span12">
+			<iframe src=""></iframe>
+		</div>
+	</div>
 
 	<!-- Content used in Javascript -->
 	<div id="js-content">
@@ -154,8 +158,6 @@
 	        <form action="{% url 'newsreader:add_tab' %}" method="post" enctype="multipart/form-data" onsubmit="add_tab_validate(event, this)">
                 {% csrf_token %}
 				<input type="text" name="name" placeholder="Page Title" /><br/>
-				<!-- <input type="file" name="image" placeholder="Tab picture URL (Optional)" /><br/>
-				<p style="color:blue">Image size must be &lt; 1MB.</p> -->
 				<button class="btn large nt-mybutton nt-green" type="submit"><i class="icon-white icon-plus-sign"></i> Add Page</button>
 	   		</form>
 		</div>
@@ -163,22 +165,6 @@
 		<!-- Add tag popover -->
 		<div>
 			<input type="text" onkeyup="get_predictions(this)">
-		</div>
-
-		<!-- Delete tag popover -->
-		<div id="delete-tag-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-header">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			    <h3>Delete tag</h3>
-			</div>
-			<div class="modal-body">
-				<p>Are you sure this tag is not relevant to the article?</p>
-				<small>Help us serve better content by making sure articles have relevant tags.</small>
-			</div>
-		  	<div class="modal-footer">
-		    	<a href="#" class="btn" data-dismiss="modal">Cancel</a>
-		    	<a href="#" class="btn btn-error">Delete</a>
-		  	</div>
 		</div>
 	</div>
 {% endblock %}

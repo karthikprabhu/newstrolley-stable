@@ -33,8 +33,8 @@ NTHtmlGenerator.prototype.generate_article = function(article, article_type, ali
 		.append(
 			$( "<a>", {
 				href: article[ "link" ],
-				text: article[ "title" ]
-			})
+				text: article[ "title" ],
+			}).attr( "data-link", article[ "mlink" ] )
 		)
 	)
 	.append(

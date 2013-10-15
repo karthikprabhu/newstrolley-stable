@@ -166,6 +166,6 @@ Ticker
 @dajaxice_register
 def get_ticker_feed(request):
 	logger.info("Re-fetching ticker feed.")
-	feed_list = [(article.heading, reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 'article_no': article.id})) for article in feed_models.Article.objects.all().filter(pub_date__gte=date.today()-timedelta(days=1)).order_by('-pub_date')][:10]
+	feed_list = [(article.heading, reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 'article_no': article.id}), article.link) for article in feed_models.Article.objects.all().filter(pub_date__gte=date.today()-timedelta(days=1)).order_by('-pub_date')][:10]
 	logger.info("Sending response(get_ticker_feed)")
 	return simplejson.dumps({'articles': feed_list})
