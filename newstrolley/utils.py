@@ -39,7 +39,11 @@ def generate_seo_link(input):
 	out.strip()
 	outarray = out.split(' ')
 	tempout = []
-	words = ('a', 'and', 'the', 'an', 'it', 'is', 'with', 'can', 'of', 'why', 'not', 'to', 'this', 'that')
+	words = ('a', 'and', 'the', 'an', 'it', 'is', 'with', 'can', 'of', 'not', 
+			'to', 'this', 'that', 'if', 'why', 'what', 'when', 'where', 'who', 'in', 
+			'at', 'from', 'for', 'their', 'there', 'dont', 'on', 'as', 'than', 'its',
+			'cant', 'too', 'be', 'has', 'been', 'did', 'i', 'my', 'have', 'you', 'do', 
+			'get', 'no', 'am')
 	for word in outarray:
 		if word not in words and word not in tempout:
 			tempout += [word]
