@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-	console.log("@!$!#!@@###############################@@@@@@@@@@@@@@@@@@@@@@@");
 	$( "#signup-login" ).click(function(){
 		$( "#signup-form-modal" ).modal( "hide" );
 		$( "#login-modal" ).modal( "show" );

@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block page-specific-js %}
-	<script type="text/javascript" src="{%static 'newsreader/js/layoutmanager.js' %}"></script>
+	<script type="text/javascript" src="{% static 'newsreader/js/layoutmanager.js' %}"></script>
 	<script type="text/javascript" src="{% static 'newsreader/js/nthtmlgenerator.js' %}"></script>
 	<script type="text/javascript" src="{% static 'newsreader/js/home.js' %}"></script>
 {% endblock %}
@@ -134,7 +134,7 @@
 			<iframe src=""></iframe>
 		</div>
 	</div>
-
+	
 	<!-- Content used in Javascript -->
 	<div id="js-content">
 		<!-- Tab settings popover -->

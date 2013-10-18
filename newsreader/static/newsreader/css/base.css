@@ -28,7 +28,6 @@ footer.footer p.pull-left {
 	color: #FFF;
 }
 
-
 #tnews {
 	background-color: #1b1b1b;
 	margin: 0;
@@ -75,6 +74,41 @@ footer.footer p.pull-left {
 	vertical-align: middle;
 }
 
+#feedback-form{
+	background-color: white;
+	border: 1px solid rgb(0, 136, 204);
+	padding: 15px;
+	float: left;
+}
+
+#feedback-pullover {
+	position: fixed;
+	top: 50%;
+	margin-top: -50px;
+	right: 0;
+}
+
+#feedback-form .control-label {
+	width: 50px;
+}
+
+#haba {
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+#feedback-form .controls {
+	margin-left: 0;
+}
+
+#feedback-pullover img {
+	float: left;
+}
+
+#feedback-pullover img:hover {
+	cursor: pointer;
+}
+
 .news-item {
 	vertical-align: middle;
 	width: 88%;
@@ -86,4 +120,3 @@ footer.footer p.pull-left {
 	height: 16px;
 	width: 16px;
 }
-
