@@ -10,7 +10,9 @@ from accounts.models import NTUser
 from newsreader.models import Tab
 from newstrolley.utils import get_object_or_none, generate_seo_link
 from newsreader import mail
+
 from feeds.models import Article
+from feeds.ajax import article_viewed
 
 import logging
 import os
@@ -218,5 +220,7 @@ def article(request, article_no=None, article_url=None):
 	context = {}
 	context['heading'] = article.get_heading()
 	context['link'] = article.link
+	
+	article_viewed(request, article_no)
 	
 	return render(request, 'newsreader/article.html', context)

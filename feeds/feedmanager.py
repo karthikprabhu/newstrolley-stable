@@ -34,7 +34,7 @@ def update_feed(source):
 	if not last_update or timedelta(datetime.now(tzlocal()), last_update) >= timedelta(hours=UPDATE_INTERVAL):
 		logger.info("Updating source %s" % str(source))
 		feed = fp.parse(source.link)
-
+		
 		for entry in feed.get('entries'):
 			#Try parsing the date and if it thows an exception, default to the current date
 			try:

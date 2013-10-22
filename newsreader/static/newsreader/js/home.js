@@ -28,6 +28,11 @@ function fetch_article(){
 			$( ".article-content, .article-content + .clearfix, .title a, .news-item marquee a" ).click(function( e ) {
 				$( "#article-modal .modal-body iframe" ).attr( "src", "about:blank" );
 				e.preventDefault();
+				
+				//register for top views
+				Dajaxice.feeds.article_viewed(function(in_cache){
+				}, {"article_id": data['article']["id"]});
+				
 				//Click function here. Even the title should call this
 				var heading = $( this ).parent().children( 0 ).children( 0 ).get(0);
 				if(heading == null)
