@@ -163,9 +163,37 @@ def resend_confirmation_mail(request):
 Ticker
 -------------------------
 '''
+'''
+@dajaxice_register
+def get_top_ten(request):
+	top_ten = cache.get("top_ten", {})
+	top_ten_articles = []
+	for article_id in top_ten:
+		article = Article.objects.get(id=article_id)
+		if not article:
+			return
+		top_ten_articles.append({"heading":article.heading,
+		                       "orig_link":str(article.link),
+		                            "link":reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 
+																				 'article_no':article.id})
+								})
+	
+	return top_ten_articles
+'''
+
 @dajaxice_register
 def get_ticker_feed(request):
 	logger.info("Re-fetching ticker feed.")
-	feed_list = [(article.heading, reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 'article_no': article.id}), article.link) for article in feed_models.Article.objects.all().filter(pub_date__gte=date.today()-timedelta(days=1)).order_by('-pub_date')][:10]
+	
+	top_ten = cache.cache.get("top_ten", {})
+	top_ten_articles = []
+	for article_id in top_ten:
+		article = feed_models.Article.objects.get(id=article_id)
+		if not article:
+			return
+		top_ten_articles.append((article.heading,
+		                        reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 'article_no':article.id}),
+								str(article.link)
+								))
 	logger.info("Sending response(get_ticker_feed)")
-	return simplejson.dumps({'articles': feed_list})
+	return simplejson.dumps({'articles': top_ten_articles})

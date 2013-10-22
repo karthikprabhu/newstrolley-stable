@@ -23,7 +23,7 @@ def article_viewed(request, article_id):
 	cache.set(cache_key, article_count, ARTICLE_TIMEOUT)
 	
 	top_ten = cache.get("top_ten", {})
-	in_cache = article_id in top_ten
+	in_cache = article_id in top_ten.keys()
 	if not in_cache:
 		if len(top_ten)<10:
 			top_ten[article_id] = article_count
@@ -41,22 +41,7 @@ def article_viewed(request, article_id):
 		
 		cache.set("top_ten", top_ten, None)
 	
-	return {"in_top_ten":in_cache}
-
-
-@dajaxice_register(method='GET')
-def get_top_ten(request):
-	top_ten = cache.get("top_ten", {})
-	top_ten_articles = []
-	response = {"top_ten":top_ten_articles}
-	for article_id in top_ten:
-		article = Article.objects.get(id=article_id)
-		top_ten_articles.append({"heading":article.heading,
-		                            "link":reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 
-							  "article_id": article.id})
-								})
-	
-	return response
+	return simplejson.dumps({"in_cache":in_cache})
 
 @dajaxice_register(method='GET')
 def get_article(request, tab_id, article_no):
