@@ -25,11 +25,12 @@ function fetch_article(){
 		if(data['success'] && data['article'] != null){
 			//If article was retrieved, then add it to the layout
 			layoutmanager.add_article(data['article']);
-			$( ".article-content, .article-content + .clearfix, .title a, .news-item marquee a" ).click(function( e ) {
+			$( ".article-content, .article-content + .clearfix, .title a, .news-item marquee a" ).unbind( "click" ).click(function( e ) {
 				$( "#article-modal .modal-body iframe" ).attr( "src", "about:blank" );
 				e.preventDefault();
 				
 				//register for top views
+				e.stopPropagation();
 				Dajaxice.feeds.article_viewed(function(in_cache){
 				}, {"article_id": data['article']["id"]});
 				

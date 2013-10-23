@@ -28,11 +28,12 @@ def article_viewed(request, article_id):
 		if len(top_ten)<10:
 			top_ten[article_id] = article_count
 		else:
-			min=-1
+			min_=-1
 			min_key=0
-			for key, value in top_ten:
-				if value<=min:
-					min = value
+			for key in top_ten:
+				value = top_ten[key]
+				if value<=min_:
+					min_ = value
 					min_key = key
 			
 			top_ten.pop(min_key)
