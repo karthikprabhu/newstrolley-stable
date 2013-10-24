@@ -31,7 +31,13 @@ function fetch_article(){
 				e.stopPropagation();
 
 				var elem = e.target;
-				var temp = $( elem ).parents( 'div.nt-article' ).children( 'h3.title' ).children( 'a' ).attr( 'href' ).substring(9);
+				var temp = $( elem ).parents( 'div.nt-article' );
+				if(temp.get(0) == undefined){
+					temp = $( elem ).attr( 'href' ).substring(9);
+				}
+				else {
+					temp = temp.children( 'h3.title' ).children( 'a' ).attr( 'href' ).substring(9);
+				}
 				var id = temp.substring(0, temp.indexOf('/'));
 				
 				//register for top views
