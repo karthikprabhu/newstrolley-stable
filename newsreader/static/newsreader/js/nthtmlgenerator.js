@@ -25,7 +25,7 @@ NTHtmlGenerator.prototype.generate_tag = function(tag_name, onclick, delete_tag,
 NTHtmlGenerator.prototype.generate_article = function(article, article_type, align) {
 	var $article = 
 	$( "<div>", { 
-		class: ( ( align )? " nt-" + align + " " : "" ) + this.classes[article_type]
+		class: ( ( align )? " nt-" + align + " " : "" ) + this.classes[article_type] + " nt-article"
 	})
 	.append(
 		//Generate the heading

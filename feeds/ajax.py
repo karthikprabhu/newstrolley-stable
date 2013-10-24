@@ -17,16 +17,17 @@ ARTICLE_TIMEOUT = 60 * 60 # 60 minutes = 1 hr
 
 @dajaxice_register(method='GET')
 def article_viewed(request, article_id):
-	cache_key = str(article_id)
+	cache_key = "top_article_cache" + str(article_id)
 	article_count = cache.get(cache_key, 0)+1
 	
 	cache.set(cache_key, article_count, ARTICLE_TIMEOUT)
 	
-	top_ten = cache.get("top_ten", {})
+	top_ten = cache.get("top_ten_cache", {})
 	in_cache = article_id in top_ten.keys()
 	if not in_cache:
 		if len(top_ten)<10:
 			top_ten[article_id] = article_count
+			in_cache = True
 		else:
 			min_=-1
 			min_key=0
@@ -35,12 +36,12 @@ def article_viewed(request, article_id):
 				if value<=min_:
 					min_ = value
 					min_key = key
-			
-			top_ten.pop(min_key)
-			
-			top_ten[article_id] = article_count
+			if min_<article_count:
+				in_cache = True
+				top_ten.pop(min_key)
+				top_ten[article_id] = article_count
 		
-		cache.set("top_ten", top_ten, None)
+		cache.set("top_ten_cache", top_ten, None)
 	
 	return simplejson.dumps({"in_cache":in_cache})
 

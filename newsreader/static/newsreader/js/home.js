@@ -25,14 +25,18 @@ function fetch_article(){
 		if(data['success'] && data['article'] != null){
 			//If article was retrieved, then add it to the layout
 			layoutmanager.add_article(data['article']);
-			$( ".article-content, .article-content + .clearfix, .title a, .news-item marquee a" ).unbind( "click" ).click(function( e ) {
+			$( ".article-content, .article-content + .clearfix, .title a, .news-item marquee a, .byline" ).unbind( "click" ).click(function( e ) {
 				$( "#article-modal .modal-body iframe" ).attr( "src", "about:blank" );
 				e.preventDefault();
+				e.stopPropagation();
+
+				var elem = e.target;
+				var temp = $( elem ).parents( 'div.nt-article' ).children( 'h3.title' ).children( 'a' ).attr( 'href' ).substring(9);
+				var id = temp.substring(0, temp.indexOf('/'));
 				
 				//register for top views
-				e.stopPropagation();
 				Dajaxice.feeds.article_viewed(function(in_cache){
-				}, {"article_id": data['article']["id"]});
+				 }, {"article_id": id});
 				
 				//Click function here. Even the title should call this
 				var heading = $( this ).parent().children( 0 ).children( 0 ).get(0);
@@ -42,6 +46,7 @@ function fetch_article(){
 				$( "#article-modal .modal-body iframe" ).attr( "src", link );
 				$( "#article-modal" ).modal( "show" );
 			});
+
 			fetch_lock = false;
 			
 			if(isVisibleInView("#scroll-detect")) {

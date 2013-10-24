@@ -185,7 +185,7 @@ def get_top_ten(request):
 def get_ticker_feed(request):
 	logger.info("Re-fetching ticker feed.")
 	
-	top_ten = cache.cache.get("top_ten", {})
+	top_ten = cache.cache.get("top_ten_cache", {})
 	top_ten_articles = []
 	for article_id in top_ten:
 		article = feed_models.Article.objects.get(id=article_id)
