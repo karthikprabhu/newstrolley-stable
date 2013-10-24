@@ -13,5 +13,5 @@ urlpatterns = patterns('newsreader.views',
     url(r'^confirm-email/', views.confirm_email, name='confirm_email'),
     url(r'^reset-password/', views.reset_password, name='reset_password'),
     url(r'^change-password/', views.change_password, name='change_password'),
-	url(r'^article/(?P<article_no>\d+)', views.article, name='article'),
+	url(r'^article/(?P<article_no>\d+)/(?P<article_url>.+)', views.article, name='article'),
 )

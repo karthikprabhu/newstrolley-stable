@@ -3,6 +3,7 @@ from dateutil.tz import tzlocal
 from dateutil.relativedelta import relativedelta
 
 import logging
+import re
 logger = logging.getLogger(__name__)
 
 def get_object_or_none(model, **kwargs):
@@ -32,3 +33,18 @@ def format_datetime(datetime):
 		pub_date = "Unavailable"
 	
 	return pub_date
+
+def generate_seo_link(input):
+	out = re.sub(r' +', ' ', re.sub(r'[^a-zA-Z0-9\s]', '', input.lower()))
+	out.strip()
+	outarray = out.split(' ')
+	tempout = []
+	words = ('a', 'and', 'the', 'an', 'it', 'is', 'with', 'can', 'of', 'not', 
+			'to', 'this', 'that', 'if', 'why', 'what', 'when', 'where', 'who', 'in', 
+			'at', 'from', 'for', 'their', 'there', 'dont', 'on', 'as', 'than', 'its',
+			'cant', 'too', 'be', 'has', 'been', 'did', 'i', 'my', 'have', 'you', 'do', 
+			'get', 'no', 'am')
+	for word in outarray:
+		if word not in words and word not in tempout:
+			tempout += [word]
+	return '-'.join(tempout)

@@ -134,6 +134,7 @@ INSTALLED_APPS = (
     'tags',
     'feeds',
     'compressor',
+	'feedback',
 )
 
 # A sample logging configuration. The only tangible logging

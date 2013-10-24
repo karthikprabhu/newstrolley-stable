@@ -27,3 +27,96 @@ footer.footer p.pull-left {
 .navbar-inverse .brand {
 	color: #FFF;
 }
+
+#tnews {
+	background-color: #1b1b1b;
+	margin: 0;
+	padding: 5px;
+	width: 100%;
+}
+
+#tnews > div {
+	width: 100%;
+	padding: 0 20px;
+}
+
+#tnews ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#tnews ul li {
+	display: inline-block;
+	margin-right: 10px;
+	position: relative;
+	z-index: 1;
+}
+
+#tnews ul li a{
+	color: white;
+}
+
+#tnews ul li a:hover {
+	color: rgb(0, 136, 204);
+	text-decoration: none;
+}
+
+#tnews ul li:first-child { 
+	background-color: rgb(0, 136, 204);
+	color: white;
+	padding: 3px 5px;
+	z-index: 2;
+}
+
+#tnews ul li i {
+	margin: 0 5px;
+	vertical-align: middle;
+}
+
+#feedback-form{
+	background-color: white;
+	border: 1px solid rgb(0, 136, 204);
+	padding: 15px;
+	float: left;
+}
+
+#feedback-pullover {
+	position: fixed;
+	top: 50%;
+	margin-top: -50px;
+	right: 0;
+}
+
+#feedback-form .control-label {
+	width: 50px;
+}
+
+#haba {
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+#feedback-form .controls {
+	margin-left: 0;
+}
+
+#feedback-pullover img {
+	float: left;
+}
+
+#feedback-pullover img:hover {
+	cursor: pointer;
+}
+
+.news-item {
+	vertical-align: middle;
+	width: 88%;
+}
+
+.separator {
+	margin: 0 10px;
+	border-right: 1px solid #ccc;
+	height: 16px;
+	width: 16px;
+}

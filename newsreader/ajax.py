@@ -2,11 +2,17 @@ from django.utils import simplejson
 from django.core import cache
 from django.contrib.auth.models import AnonymousUser
 
+from django.core.urlresolvers import reverse
+
 from dajaxice.decorators import dajaxice_register
 
 from newsreader.models import Tab, Source, TabSource
-from newstrolley.utils import get_object_or_none
+from newstrolley.utils import get_object_or_none, generate_seo_link
 from newsreader import mail
+
+import feeds.models as feed_models
+
+from datetime import date, timedelta
 
 import logging
 logger = logging.getLogger(__name__)
@@ -132,7 +138,6 @@ def delete_tab(request, tab_id):
 Account management
 -------------------------
 '''
-
 @dajaxice_register
 def resend_confirmation_mail(request):
 	logger.info("Re-sending verification mail for user %s" % str(request.user))
@@ -152,3 +157,43 @@ def resend_confirmation_mail(request):
 
 	logger.info("Sending response(resend_confirmation_mail)")
 	return simplejson.dumps({'success': success})
+
+'''
+-------------------------
+Ticker
+-------------------------
+'''
+'''
+@dajaxice_register
+def get_top_ten(request):
+	top_ten = cache.get("top_ten", {})
+	top_ten_articles = []
+	for article_id in top_ten:
+		article = Article.objects.get(id=article_id)
+		if not article:
+			return
+		top_ten_articles.append({"heading":article.heading,
+		                       "orig_link":str(article.link),
+		                            "link":reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 
+																				 'article_no':article.id})
+								})
+	
+	return top_ten_articles
+'''
+
+@dajaxice_register
+def get_ticker_feed(request):
+	logger.info("Re-fetching ticker feed.")
+	
+	top_ten = cache.cache.get("top_ten_cache", {})
+	top_ten_articles = []
+	for article_id in top_ten:
+		article = feed_models.Article.objects.get(id=article_id)
+		if not article:
+			return
+		top_ten_articles.append((article.heading,
+		                        reverse('newsreader:article', kwargs={'article_url': generate_seo_link(article.get_heading()), 'article_no':article.id}),
+								str(article.link)
+								))
+	logger.info("Sending response(get_ticker_feed)")
+	return simplejson.dumps({'articles': top_ten_articles})

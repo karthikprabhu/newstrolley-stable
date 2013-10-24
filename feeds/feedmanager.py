@@ -34,7 +34,7 @@ def update_feed(source):
 	if not last_update or timedelta(datetime.now(tzlocal()), last_update) >= timedelta(hours=UPDATE_INTERVAL):
 		logger.info("Updating source %s" % str(source))
 		feed = fp.parse(source.link)
-
+		
 		for entry in feed.get('entries'):
 			#Try parsing the date and if it thows an exception, default to the current date
 			try:
@@ -72,7 +72,7 @@ def get_content(user, tab_id):
 	logger.info("Retrieving content for tab_id %s" % int(tab_id))
 	
 	#Try finding articles in cache
-	cache_key = str(user.id) + str(tab_id)
+	cache_key = "tab_cache" + str(user.id) + str(tab_id)
 	articles = cache.get(cache_key, [])
 	logger.debug("No of articles found in cache: %d (cache_key=%s)" % (len(articles), cache_key))
 	

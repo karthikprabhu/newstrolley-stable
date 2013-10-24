@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load compress %}
+{% load dajaxice_templatetags %}
 
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,9 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/bootstrap-responsive.min.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/zocial/zocial.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/base.css' %}">
+		
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<!--<link rel="stylesheet" type="text/css" href="{% static 'newsreader/css/ticker-style.css' %}">-->
 		{% block page-specific-css %}{% endblock %}
 		{% endcompress %}
 
@@ -22,8 +26,10 @@
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 		{% compress js %}
+		{% dajaxice_js_import %}
 		<script type="text/javascript" src="{% static 'newsreader/js/bootstrap.min.js' %}"></script>
 		<script type="text/javascript" src="{% static 'newsreader/js/g_analytics.js' %}"></script>
+		<!--<script type="text/javascript" src="{% static 'newsreader/js/jquery.ticker.js' %}"></script>-->
 		{% block page-specific-js %}{% endblock %}
 		{% endcompress %}
 	</head>
@@ -50,6 +56,31 @@
 		<div class="container">
 			{% block main-container %}{% endblock %}
 			<hr>
+			<div id="tnews" class="navbar navbar-fixed-bottom navbar-inverse">
+				<ul id="js-news">
+					<li><i class="icon-white icon-globe"></i>Breaking News</li>
+					<li class="news-item">
+						<marquee direction="left" behavior="scroll" scrollamount="2">
+						</marquee>
+					</li>
+				</ul>
+				<script type="text/javascript">
+					Dajaxice.newsreader.get_ticker_feed(function(data){
+						$.each(data['articles'], function(index, article){
+							$('.news-item marquee').append("<a href=\"" + article[1] + "\" data-link=\"" + article[2] + "\">" + article[0] + "</a><i class=\"separator\"></i>");
+						});
+						$( ".news-item a" ).hover(function() {
+							$( ".news-item marquee" ).attr( "scrollamount", "0" );
+						}, function() {
+							$( ".news-item marquee" ).attr( "scrollamount", "3" );
+						});
+					});
+					$( ".news-item marquee a" ).click( function(e) {
+						e.preventDefault();
+					});
+				</script>
+			</div>
+			<hr>
 			<footer class="footer">
 				<p class="pull-left">&copy; 2013 CodeHippies</p>
 				<div class="pull-right">
@@ -64,5 +95,54 @@
 
 		<!-- Rest of the body -->
 		{% block other-body-content %}{% endblock %}
+		
+		<!-- Feedback Form-->
+		{% if user.is_authenticated %}
+		<div id="feedback-pullover">
+			<img src="{% static 'newsreader/media/feedback.png' %}" />
+			<form id="feedback-form" class="form-horizontal">
+				{% csrf_token %}
+				<div class="control-group">
+					<label class="control-label" for="subject">Subject</label>
+					<div class="controls">
+						<input type="text" id="subject">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="feedback">Feedback</label>
+					<div class="controls">
+						<textarea id="feedback"></textarea>
+					</div>
+				</div>
+				<div class="control-group" id="haba">
+					<div class="controls">
+						<input type="submit" class="nt-mybutton nt-green" value="Submit"/>
+						<span></span>
+					</div>
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+		$( "#feedback-form, #haba span" ).hide();
+		$( "#feedback-pullover > img" ).click(function(){
+			$( "#feedback-form" ).animate({ width: "toggle", opacity: "toggle" }, 1000, function(){});
+		});
+		$( "#feedback-form" ).submit(function(e) {
+			e.preventDefault();
+			Dajaxice.feedback.post_feedback(function(success){
+				if(success){ 
+					$( "#feedback-form input[type=text], #feedback-form textarea" ).val( "" );
+					$( "#haba span" ).text( "Success!" ).css( "color", "green" ).show().effect( "fade", { duration: 5000 } );
+				} 
+				else { 
+					$( "#haba span" ).text( "Error!" ).css( "color", "red" ).show().effect( "fade", { duration: 5000 } );
+				}
+			}, { 
+				'subject': $('#subject').val(), 
+				'text':$('#feedback').val()
+			});
+		});
+		</script>
+		{% endif %}
 	</body>
 </html>

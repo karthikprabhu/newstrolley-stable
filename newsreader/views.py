@@ -1,4 +1,4 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
@@ -8,9 +8,11 @@ from django.core.cache import cache
 
 from accounts.models import NTUser
 from newsreader.models import Tab
-from newstrolley.utils import get_object_or_none
+from newstrolley.utils import get_object_or_none, generate_seo_link
 from newsreader import mail
+
 from feeds.models import Article
+from feeds.ajax import article_viewed
 
 import logging
 import os
@@ -204,16 +206,21 @@ def add_tab(request):
 Article Page
 -------------------------
 '''
-def article(request, article_no=None):
-	if not article_no:
-		return HttpResponseRedirect(reverse('newsreader:index'))
+def article(request, article_no=None, article_url=None):
+	if not article_url or not article_no:
+		raise Http404
 	
 	article = get_object_or_none(Article, id=article_no)
 	if not article:
-		return HttpResponseRedirect(reverse('newsreader:index'))
+		raise Http404
+	
+	if not article_url == generate_seo_link(article.get_heading()):
+		raise Http404
 	
 	context = {}
 	context['heading'] = article.get_heading()
 	context['link'] = article.link
+	
+	article_viewed(request, article_no)
 	
 	return render(request, 'newsreader/article.html', context)

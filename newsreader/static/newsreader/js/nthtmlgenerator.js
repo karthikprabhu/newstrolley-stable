@@ -25,7 +25,7 @@ NTHtmlGenerator.prototype.generate_tag = function(tag_name, onclick, delete_tag,
 NTHtmlGenerator.prototype.generate_article = function(article, article_type, align) {
 	var $article = 
 	$( "<div>", { 
-		class: ( ( align )? " nt-" + align + " " : "" ) + this.classes[article_type]
+		class: ( ( align )? " nt-" + align + " " : "" ) + this.classes[article_type] + " nt-article"
 	})
 	.append(
 		//Generate the heading
@@ -33,8 +33,8 @@ NTHtmlGenerator.prototype.generate_article = function(article, article_type, ali
 		.append(
 			$( "<a>", {
 				href: article[ "link" ],
-				text: article[ "title" ]
-			})
+				text: article[ "title" ],
+			}).attr( "data-link", article[ "mlink" ] )
 		)
 	)
 	.append(
@@ -46,7 +46,7 @@ NTHtmlGenerator.prototype.generate_article = function(article, article_type, ali
 	.append(
 		//Generate the summary
 		$( "<div>", { class: "article-content" } )
-		.append( $( article[ "summary" ] ) )
+		.append( this.get_image(article["summary"] ) )
 		.append(
 			$("<p>", { text: $("<p>").append(article["summary"]).text() } )
 		)
@@ -88,7 +88,7 @@ NTHtmlGenerator.prototype.generate_new_tag_element = function() {
 	.append(
 		$( "<span>", {
 			class: "label label-info",
-			text: "+ new tag"
+			text: "+ add topic"
 		})
 	);
 }
@@ -110,4 +110,15 @@ NTHtmlGenerator.prototype.generate_source_element = function(source_name) {
 		)
 		.attr( "role", "menuitem" )
 	).get(0).outerHTML;
+}
+
+NTHtmlGenerator.prototype.get_image = function(summary) {
+	var images = "";
+	$.each( $( "<div>" ).append( summary ).children( "img" ), function( index, value ) {
+		if( value.width > 5 || value.height > 5 ) {
+			images += value.outerHTML;
+		}
+	});
+	
+	return images;
 }
