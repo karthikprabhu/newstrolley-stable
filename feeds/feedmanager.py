@@ -72,7 +72,7 @@ def get_content(user, tab_id):
 	logger.info("Retrieving content for tab_id %s" % int(tab_id))
 	
 	#Try finding articles in cache
-	cache_key = str(user.id) + str(tab_id)
+	cache_key = "tab_cache" + str(user.id) + str(tab_id)
 	articles = cache.get(cache_key, [])
 	logger.debug("No of articles found in cache: %d (cache_key=%s)" % (len(articles), cache_key))
 	
