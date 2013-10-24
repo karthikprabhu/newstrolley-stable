@@ -13,7 +13,7 @@ from models import Article
 import logging
 logger = logging.getLogger(__name__)
 
-ARTICLE_TIMEOUT = 60 * 60 # 60 minutes = 1 hr
+ARTICLE_TIMEOUT = 60 * 60 * 24# 60 minutes = 1 hr
 
 @dajaxice_register(method='GET')
 def article_viewed(request, article_id):
