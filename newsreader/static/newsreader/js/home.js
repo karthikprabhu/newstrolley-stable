@@ -344,6 +344,11 @@ $( document ).ready(function() {
 		'html': 'true',
 	});
 
+	$( "#article-modal > span:nth-child(2)" ).click(function() {
+		$( "#article-modal > div > iframe" ).attr( "src", "about:blank" );
+		$( "#article-modal" ).modal( 'hide' );
+	});
+
 	//Resend email
 	if( $( "#resend-email" ).length > 0 ) {
 		$( "#resend-email" ).click(function( event ){
