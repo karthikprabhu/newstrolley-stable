@@ -13,7 +13,7 @@ from models import Article
 import logging
 logger = logging.getLogger(__name__)
 
-ARTICLE_TIMEOUT = 60 * 60 * 24# 60 minutes = 1 hr
+ARTICLE_TIMEOUT = 24*60*60 # 24 hrs in a day * 60 mins in an hr * 60 secs in a min
 
 @dajaxice_register(method='GET')
 def article_viewed(request, article_id):
@@ -41,7 +41,7 @@ def article_viewed(request, article_id):
 				top_ten.pop(min_key)
 				top_ten[article_id] = article_count
 		
-		cache.set("top_ten_cache", top_ten, None)
+		cache.set("top_ten_cache", top_ten, 2*ARTICLE_TIMEOUT)
 	
 	return simplejson.dumps({"in_cache":in_cache})
 
