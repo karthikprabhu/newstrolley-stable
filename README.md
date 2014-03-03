@@ -49,15 +49,17 @@ Initial Setup
 	```
 	Note: Do not make any changes to settings.py. These are the only settings you must change
 
-6. Sync the database
+6. Download MySQL Python Connector
+
+7. Sync the database
 
 	```python manage.py syncdb```
 
-7. Load the database with sources
+8. Load the database with sources
 
 	```python load_db.py```
 
-8. Test to see if the project is working properly
+9. Test to see if the project is working properly
 
 	```python nt_test.py```
 
