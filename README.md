@@ -44,6 +44,8 @@ Initial Setup
 	DB_HOST = ''
 	STATIC_ROOT = ''
 	ALLOWED_HOSTS = []
+	EMAIL_HOST = 'localhost'
+	EMAIL_HOST_USER = ''
 	```
 	Note: Do not make any changes to settings.py. These are the only settings you must change
 
