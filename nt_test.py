@@ -1,7 +1,7 @@
-from django.core.management import setup_environ
+import os
 from newstrolley import settings as nt_settings
 
-setup_environ(nt_settings)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "newstrolley.settings")
 
 from django.test.utils import setup_test_environment, teardown_test_environment
 from django.test.simple import DjangoTestSuiteRunner
