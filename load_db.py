@@ -13,8 +13,8 @@ reader = csv.reader(open('feeds.txt'), delimiter=',')
 for row in reader:
     s = models.Source(link=row[0], name=row[1])
     try:
-		s.save()
+        s.save()
     except:
-		logger.debug("Could not save source: "+str(s))
+        logger.debug("Could not save source: "+str(s))
 
     print 'added:', s.name
