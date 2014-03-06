@@ -14,7 +14,7 @@ for row in reader:
     s = models.Source(link=row[0], name=row[1])
     try:
 		s.save()
-	except:
+    except:
 		logger.debug("Could not save source: "+str(s))
 
     print 'added:', s.name
