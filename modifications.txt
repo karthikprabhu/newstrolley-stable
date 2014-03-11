@@ -1,0 +1,50 @@
+-----------
+Important:
+-----------
+Before going live, wipe the whole database on the server, make article-links unique, and put up google analytics.
+
+-----------
+Fixed:
+-----------
+. Rename 'Tabs' to 'Pages' and 'Tags' to 'Topics'. 
+. Fix 'New Tab' popover.
+. Landing page - finalize.
+. Page for individual articles.
+. SEO: generate url from article_id and heading, for crawlers too!
+. Clicking anywhere in the div should open the full article
+. Script to load all articles from all sources.
+. Full article within site should be in a modal
+. News Ticker
+. Fix TOI pages
+. Beta feedback django
+
+-----------
+To Do:
+-----------
+Plan B:
+. Remove tags from ui
+. UI for adding sources and topics
+. twitter/facebook integration
+
+Urgent:
+. Preprocessing of tags
+. Only one vote/article per user/guest
+. Tags
+. Top articles
+. Change Password page
+. Account settings
+. Read later, favorite buttons
+. Site tutorial
+. Source pages, topics pages
+. cron job to fetch news every day
+. capcha on multiple login attempts
+. Twitter integration - go live and start tweeting.
+. Many tests to be written!
+
+Baad mein:
+. Machine learning for summarizing articles
+. Optimization for mobile
+. Default pages: Classifieds, Comics, Games(crosswords, etc.)
+. Make and share custom newspaper.
+. mobile site could have 'click image to enlarge'
+. Mail daily newspaper in pdf: embed ads
