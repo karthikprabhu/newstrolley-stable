@@ -264,6 +264,7 @@ function append_tag(tag_name, article) {
 
 //Retrieves the tags related to the tab
 function retrieve_tags() {
+/*
 	var tab_id = get_active_tab();
 	
 	if($(".tab-settings button").get(0).nextElementSibling == null) {//Perform Ajax only when showing the tab-settings popover
@@ -275,6 +276,7 @@ function retrieve_tags() {
 			}
 		},{"tab_id": tab_id});
 	}
+*/
 }
 
 $( document ).ready(function() {

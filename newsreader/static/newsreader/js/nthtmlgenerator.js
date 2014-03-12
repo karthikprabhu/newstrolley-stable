@@ -51,15 +51,17 @@ NTHtmlGenerator.prototype.generate_article = function(article, article_type, ali
 			$("<p>", { text: $("<p>").append(article["summary"]).text() } )
 		)
 	)
-	.append( this.generate_clearfix() )
-	.append( $( "<i>", { class: "icon-tag" } ) );
+	.append( this.generate_clearfix() );
+	//.append( $( "<i>", { class: "icon-tag" } ) );
 	
 	//Generate tags
+	/*
 	var gen = this;
 	$.each( article[ "tags" ], function( index, value ){ 
 		$article.append( gen.generate_tag( value, "", true, false ) );
 	});
 	$article.append( this.generate_new_tag_element() );
+	*/
 
 	if(article_type == "featured")
 		$article.append( this.generate_clearfix() );
